@@ -1,4 +1,7 @@
-import { Button } from "../ui/button";
+import { CTAButton } from "../CTAButton";
+import { PageMeta } from "../PageMeta";
+import { CTA_PATHS } from "../../lib/cta";
+import { PAGE_SEO } from "../../lib/seo";
 import { Check, Sparkles, HelpCircle } from "lucide-react";
 
 const plans = [
@@ -19,6 +22,7 @@ const plans = [
       "Mobile app access",
     ],
     cta: "Start Free Trial",
+    ctaPath: CTA_PATHS.trial,
     popular: false,
     badge: null,
   },
@@ -42,6 +46,7 @@ const plans = [
       "Data export",
     ],
     cta: "Start Free Trial",
+    ctaPath: CTA_PATHS.trial,
     popular: true,
     badge: "Most Popular",
   },
@@ -65,6 +70,7 @@ const plans = [
       "SLA guarantee",
     ],
     cta: "Contact Sales",
+    ctaPath: CTA_PATHS.enterprise,
     popular: false,
     badge: "Enterprise",
   },
@@ -105,6 +111,7 @@ const faqs = [
 export default function PricingPage() {
   return (
     <>
+      <PageMeta {...PAGE_SEO.pricing} />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-white to-blue-50/30">
@@ -192,7 +199,8 @@ export default function PricingPage() {
                   </div>
 
                   {/* CTA Button */}
-                  <Button
+                  <CTAButton
+                    to={plan.ctaPath}
                     className={`w-full py-6 text-base ${
                       plan.popular
                         ? "bg-white text-[#1E4ED8] hover:bg-gray-100"
@@ -200,7 +208,7 @@ export default function PricingPage() {
                     }`}
                   >
                     {plan.cta}
-                  </Button>
+                  </CTAButton>
                 </div>
 
                 {/* Features List */}
@@ -333,9 +341,12 @@ export default function PricingPage() {
 
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-4">Still have questions?</p>
-            <Button className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-8 py-4">
+            <CTAButton
+              to={CTA_PATHS.enterprise}
+              className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-8 py-4"
+            >
               Contact Sales Team
-            </Button>
+            </CTAButton>
           </div>
         </div>
       </section>
@@ -349,9 +360,12 @@ export default function PricingPage() {
           <p className="text-xl text-white/90 mb-8">
             No credit card required. 14 days to explore all features.
           </p>
-          <Button className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg">
+          <CTAButton
+            to={CTA_PATHS.trial}
+            className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg"
+          >
             Get Started Free
-          </Button>
+          </CTAButton>
         </div>
       </section>
     </>

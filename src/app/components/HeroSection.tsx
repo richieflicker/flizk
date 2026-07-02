@@ -1,5 +1,6 @@
-import { Button } from "./ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { CTAButton } from "./CTAButton";
+import { CTA_PATHS } from "../lib/cta";
 import { DashboardMockup } from "./DashboardMockup";
 
 export function HeroSection() {
@@ -49,16 +50,20 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-            <Button className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all">
+            <CTAButton
+              to={CTA_PATHS.demo}
+              className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
+            >
               Book Demo
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
+            </CTAButton>
+            <CTAButton
+              to={CTA_PATHS.dentxone}
               variant="outline"
               className="px-8 py-6 text-lg border-2 border-gray-300 hover:border-[#1E4ED8] hover:text-[#1E4ED8]"
             >
               Explore Dentxone
-            </Button>
+            </CTAButton>
           </div>
 
           {/* Dashboard Mockup */}

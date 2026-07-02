@@ -1,7 +1,8 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
-import { Button } from "./ui/button";
+import { CTAButton } from "./CTAButton";
+import { CTA_PATHS } from "../lib/cta";
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,9 +39,12 @@ export function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-6">
+            <CTAButton
+              to={CTA_PATHS.demo}
+              className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-6"
+            >
               Book Demo
-            </Button>
+            </CTAButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,9 +93,12 @@ export function Navigation() {
             >
               Contact
             </Link>
-            <Button className="w-full bg-[#1E4ED8] hover:bg-[#1a42b8] text-white">
+            <CTAButton
+              to={CTA_PATHS.demo}
+              className="w-full bg-[#1E4ED8] hover:bg-[#1a42b8] text-white"
+            >
               Book Demo
-            </Button>
+            </CTAButton>
           </div>
         </div>
       )}
