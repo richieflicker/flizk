@@ -19,13 +19,13 @@ npm run dev
 
 ## Environment variables
 
-Create a `.env.local` file for the contact form (Formspree):
+The contact form uses [Formspree](https://formspree.io). The form ID is set in `.env` / `.env.production`:
 
 ```bash
-VITE_FORMSPREE_FORM_ID=your_form_id
+VITE_FORMSPREE_FORM_ID=mzdlkdnv
 ```
 
-Sign up at [formspree.io](https://formspree.io), create a form, and use the ID from your form endpoint (`https://formspree.io/f/xxxxxxxx` → `xxxxxxxx`).
+To override locally, copy `.env.example` to `.env.local`.
 
 ## Build & deploy
 
