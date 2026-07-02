@@ -1,5 +1,6 @@
 import { Check, Sparkles } from "lucide-react";
-import { Button } from "./ui/button";
+import { CTAButton } from "./CTAButton";
+import { CTA_PATHS } from "../lib/cta";
 
 const plans = [
   {
@@ -16,6 +17,7 @@ const plans = [
       "Email support",
     ],
     cta: "Start Free Trial",
+    ctaPath: CTA_PATHS.trial,
     popular: false,
   },
   {
@@ -34,6 +36,7 @@ const plans = [
       "Priority support",
     ],
     cta: "Start Free Trial",
+    ctaPath: CTA_PATHS.trial,
     popular: true,
   },
   {
@@ -53,6 +56,7 @@ const plans = [
       "24/7 phone support",
     ],
     cta: "Contact Sales",
+    ctaPath: CTA_PATHS.enterprise,
     popular: false,
   },
 ];
@@ -131,7 +135,8 @@ export function PricingPreview() {
               </div>
 
               {/* CTA Button */}
-              <Button
+              <CTAButton
+                to={plan.ctaPath}
                 className={`w-full mb-8 py-6 ${
                   plan.popular
                     ? "bg-white text-[#1E4ED8] hover:bg-gray-100"
@@ -139,7 +144,7 @@ export function PricingPreview() {
                 }`}
               >
                 {plan.cta}
-              </Button>
+              </CTAButton>
 
               {/* Features List */}
               <div className="space-y-4">

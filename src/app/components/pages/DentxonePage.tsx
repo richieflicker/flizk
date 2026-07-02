@@ -1,4 +1,8 @@
-import { Button } from "../ui/button";
+import { CTAButton } from "../CTAButton";
+import { PageMeta } from "../PageMeta";
+import { JsonLd } from "../JsonLd";
+import { CTA_PATHS } from "../../lib/cta";
+import { PAGE_SEO, pageUrl } from "../../lib/seo";
 import { DashboardMockup } from "../DashboardMockup";
 import {
   Users,
@@ -86,9 +90,43 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Dentxone",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "INR",
+    price: "999",
+  },
+  url: pageUrl("/products/dentxone"),
+  provider: {
+    "@type": "Organization",
+    name: "Flizk",
+  },
+};
+
 export default function DentxonePage() {
   return (
     <>
+      <PageMeta {...PAGE_SEO.dentxone} />
+      <JsonLd id="dentxone-faq" data={faqSchema} />
+      <JsonLd id="dentxone-software" data={softwareSchema} />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6] pt-32 pb-20 overflow-hidden">
@@ -113,16 +151,20 @@ export default function DentxonePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg">
+              <CTAButton
+                to={CTA_PATHS.trial}
+                className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg"
+              >
                 Start Free Trial
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button
+              </CTAButton>
+              <CTAButton
+                to={CTA_PATHS.demo}
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
               >
                 Book Demo
-              </Button>
+              </CTAButton>
             </div>
           </div>
         </div>
@@ -317,16 +359,20 @@ export default function DentxonePage() {
             Start your 14-day free trial today. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg">
+            <CTAButton
+              to={CTA_PATHS.trial}
+              className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg"
+            >
               Start Free Trial
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
+            </CTAButton>
+            <CTAButton
+              to={CTA_PATHS.demo}
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
             >
               Schedule Demo
-            </Button>
+            </CTAButton>
           </div>
         </div>
       </section>

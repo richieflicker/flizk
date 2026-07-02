@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { Button } from "./ui/button";
+import { CTAButton } from "./CTAButton";
+import { CTA_PATHS } from "../lib/cta";
 
 export function FinalCTA() {
   return (
@@ -20,16 +21,20 @@ export function FinalCTA() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg shadow-2xl hover:shadow-3xl transition-all">
+            <CTAButton
+              to={CTA_PATHS.demo}
+              className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg shadow-2xl hover:shadow-3xl transition-all"
+            >
               Book Demo
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
+            </CTAButton>
+            <CTAButton
+              to={CTA_PATHS.trial}
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
             >
               Start Free Trial
-            </Button>
+            </CTAButton>
           </div>
 
           {/* Trust Indicators */}

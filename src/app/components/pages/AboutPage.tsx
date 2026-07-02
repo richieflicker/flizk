@@ -1,4 +1,8 @@
 import { Target, Users, Lightbulb, Heart, Award, TrendingUp } from "lucide-react";
+import { Link } from "react-router";
+import { PageMeta } from "../PageMeta";
+import { CTA_PATHS } from "../../lib/cta";
+import { PAGE_SEO } from "../../lib/seo";
 
 const values = [
   {
@@ -67,6 +71,7 @@ const stats = [
 export default function AboutPage() {
   return (
     <>
+      <PageMeta {...PAGE_SEO.about} />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6]">
@@ -263,9 +268,12 @@ export default function AboutPage() {
               We're growing fast and always looking for talented individuals who share our passion
               for transforming healthcare technology.
             </p>
-            <button className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all">
+            <Link
+              to={CTA_PATHS.contact}
+              className="inline-block bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
+            >
               View Open Positions
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -280,12 +288,18 @@ export default function AboutPage() {
             Join hundreds of dental clinics using Dentxone to transform their practice.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all">
+            <Link
+              to={CTA_PATHS.trial}
+              className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
+            >
               Start Free Trial
-            </button>
-            <button className="border-2 border-gray-300 hover:border-[#1E4ED8] text-gray-700 hover:text-[#1E4ED8] px-8 py-4 rounded-xl font-medium transition-all">
+            </Link>
+            <Link
+              to={CTA_PATHS.contact}
+              className="border-2 border-gray-300 hover:border-[#1E4ED8] text-gray-700 hover:text-[#1E4ED8] px-8 py-4 rounded-xl font-medium transition-all"
+            >
               Contact Us
-            </button>
+            </Link>
           </div>
         </div>
       </section>

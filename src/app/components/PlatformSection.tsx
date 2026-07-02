@@ -1,4 +1,5 @@
 import { Layers, Database, Lock, Smartphone, Globe, Cpu } from "lucide-react";
+import { Link } from "react-router";
 
 export function PlatformSection() {
   const platformFeatures = [
@@ -106,9 +107,12 @@ export function PlatformSection() {
               </div>
             </div>
 
-            <button className="bg-white hover:bg-gray-100 text-[#1E4ED8] px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all">
+            <Link
+              to="/about"
+              className="inline-block bg-white hover:bg-gray-100 text-[#1E4ED8] px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
+            >
               Learn About Flizk Platform
-            </button>
+            </Link>
           </div>
 
           {/* Right - Platform Diagram */}

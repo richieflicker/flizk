@@ -1,4 +1,6 @@
 import { Settings, UserPlus, TrendingUp, ArrowRight } from "lucide-react";
+import { Link } from "react-router";
+import { CTA_PATHS } from "../lib/cta";
 
 const steps = [
   {
@@ -98,10 +100,13 @@ export function WorkflowSection() {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <p className="text-gray-600 mb-4">Ready to streamline your clinic operations?</p>
-          <button className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all inline-flex items-center space-x-2">
+          <Link
+            to={CTA_PATHS.trial}
+            className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all inline-flex items-center space-x-2"
+          >
             <span>Start Free Trial</span>
             <ArrowRight className="w-5 h-5" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
