@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin, Clock, MessageSquare, Calendar } from "lucide-react";
 import { Link } from "react-router";
 import { ContactForm } from "../ContactForm";
+import { ObfuscatedPhone } from "../ObfuscatedPhone";
 import { PageMeta } from "../PageMeta";
 import { CTA_PATHS } from "../../lib/cta";
 import { PAGE_SEO } from "../../lib/seo";
@@ -17,8 +18,7 @@ const contactMethods = [
   {
     icon: Phone,
     title: "Call Us",
-    detail: "+91 123 456 7890",
-    href: "tel:+911234567890",
+    obfuscatedPhone: true,
     description: "Call us during business hours for immediate assistance.",
     color: "from-teal-500 to-teal-600",
   },
@@ -71,7 +71,9 @@ export default function ContactPage() {
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{method.title}</h3>
-                  {method.href ? (
+                  {"obfuscatedPhone" in method && method.obfuscatedPhone ? (
+                    <ObfuscatedPhone className="text-[#1E4ED8] font-medium mb-2 block hover:underline text-left" />
+                  ) : method.href ? (
                     <a
                       href={method.href}
                       className="text-[#1E4ED8] font-medium mb-2 block hover:underline"

@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router";
+import { ObfuscatedPhone } from "./ObfuscatedPhone";
 
 export function Footer() {
   return (
@@ -97,9 +98,7 @@ export function Footer() {
             <Phone className="w-5 h-5 text-[#14B8A6] flex-shrink-0 mt-1" />
             <div>
               <h5 className="font-semibold mb-1">Phone</h5>
-              <a href="tel:+911234567890" className="text-gray-400 hover:text-white">
-                +91 123 456 7890
-              </a>
+              <ObfuscatedPhone className="text-gray-400 hover:text-white text-left" />
             </div>
           </div>
           <div className="flex items-start space-x-3">
