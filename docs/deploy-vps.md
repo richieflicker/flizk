@@ -31,6 +31,33 @@ git pull
 ./scripts/deploy-vps.sh
 ```
 
+## GitHub Actions auto-deploy (SSH)
+
+Push to `main` runs `.github/workflows/deploy.yml`, which SSHs into the VPS and runs `./scripts/deploy-vps.sh`.
+
+Create a **dedicated** key pair on your Mac (do not reuse a GitHub Deploy key — that is for VPS→GitHub only):
+
+```bash
+ssh-keygen -t ed25519 -f ~/.ssh/flizk_gha -C "github-actions-flizk" -N ""
+ssh-copy-id -i ~/.ssh/flizk_gha.pub USER@VPS_IP
+ssh -i ~/.ssh/flizk_gha USER@VPS_IP   # must succeed with no password
+```
+
+In the repo: **Settings → Secrets and variables → Actions**, set:
+
+| Secret | Value |
+|--------|--------|
+| `VPS_HOST` | VPS public IP |
+| `VPS_USER` | Same `USER` as above |
+| `VPS_SSH_KEY` | Full contents of `~/.ssh/flizk_gha` (private key), including `BEGIN`/`END` lines |
+
+```bash
+# Copy private key to clipboard (Mac), then paste into VPS_SSH_KEY
+pbcopy < ~/.ssh/flizk_gha
+```
+
+If auth still fails: confirm `~/.ssh/authorized_keys` on the VPS contains the matching `.pub` line for that user, and `chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys`.
+
 ## nginx reverse proxy
 
 Save as `/etc/nginx/sites-available/flizk.com` and enable it:
