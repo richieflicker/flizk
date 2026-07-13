@@ -1,14 +1,12 @@
 # Flizk Website
 
-Marketing website for [Flizk](https://flizk.com), a healthcare technology company. The flagship product is **Dentxone** — all-in-one dental clinic management software.
+Marketing website for [Flizk](https://flizk.com). Flagship product: **DentXOne** — dental clinic management software for Chennai & Tamil Nadu.
 
 ## Tech stack
 
-- React 18 + TypeScript
-- Vite 6
+- Next.js 15 (App Router) + React 18 + TypeScript
 - Tailwind CSS 4
-- React Router 7
-- GitHub Pages (`flizk.com`)
+- VPS deploy: Node (`next start`) behind nginx + PM2
 
 ## Local development
 
@@ -19,34 +17,39 @@ npm run dev
 
 ## Environment variables
 
-The contact form uses [Formspree](https://formspree.io). The form ID is set in `.env` / `.env.production`:
+Contact form uses [Formspree](https://formspree.io). Set in `.env` / `.env.local` / `.env.production`:
 
 ```bash
-VITE_FORMSPREE_FORM_ID=mzdlkdnv
+NEXT_PUBLIC_FORMSPREE_FORM_ID=your_form_id
 ```
 
-To override locally, copy `.env.example` to `.env.local`.
-
-## Build & deploy
+## Build & run (production)
 
 ```bash
 npm run build
-npm run deploy
+npm start
 ```
 
-The `predeploy` script copies `index.html` to `404.html` so client-side routes work on GitHub Pages.
+Listens on port 3000 by default (`next start -p 3000`).
+
+## VPS deploy
+
+See [docs/deploy-vps.md](docs/deploy-vps.md). Quick path on the server:
+
+```bash
+./scripts/deploy-vps.sh
+```
+
 
 ## Project structure
 
 ```
 src/
-├── app/
-│   ├── App.tsx              # Router and layout
-│   ├── components/          # Pages, sections, UI
-│   └── lib/                 # CTA paths, SEO constants
-├── styles/                  # Tailwind and theme
-└── main.tsx
-public/                      # robots.txt, sitemap.xml, favicon
+├── app/                 # Next.js App Router (routes + metadata)
+├── components/          # UI, sections, page views
+├── lib/                 # SEO, CTA helpers, metadata builder
+└── styles/              # Tailwind + theme
+public/                  # robots.txt, sitemap.xml, favicon
 ```
 
 ## Pages
@@ -54,9 +57,11 @@ public/                      # robots.txt, sitemap.xml, favicon
 | Route | Description |
 |-------|-------------|
 | `/` | Home |
-| `/products/dentxone` | Product page |
-| `/pricing` | Pricing |
+| `/products/dentxone` | DentXOne product |
+| `/pricing` | Plans (contact for quote) |
+| `/dental-clinic-software-chennai` | Chennai SEO landing |
+| `/whatsapp-appointment-reminders` | WhatsApp reminders landing |
 | `/about` | About Flizk |
 | `/contact` | Contact / demo form |
-| `/privacy` | Privacy policy (draft) |
-| `/terms` | Terms of service (draft) |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of service |
