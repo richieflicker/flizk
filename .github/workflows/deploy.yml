@@ -15,7 +15,8 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
+            set -e
             cd /var/www/flizk
             git fetch origin main
             git reset --hard origin/main
-            ./scripts/deploy-vps.sh
+            bash -lc 'cd /var/www/flizk && ./scripts/deploy-vps.sh'

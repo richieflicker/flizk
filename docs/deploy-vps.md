@@ -58,6 +58,8 @@ pbcopy < ~/.ssh/flizk_gha
 
 If auth still fails: confirm `~/.ssh/authorized_keys` on the VPS contains the matching `.pub` line for that user, and `chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys`.
 
+If deploy fails with `npm: command not found`, Node is installed but not on PATH for non-interactive SSH (common with nvm). The deploy script loads nvm/fnm automatically; also ensure nvm is sourced from `~/.bashrc` / `~/.profile` for that user.
+
 ## nginx reverse proxy
 
 Save as `/etc/nginx/sites-available/flizk.com` and enable it:
