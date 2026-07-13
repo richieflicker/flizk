@@ -2,7 +2,7 @@
 # Run on the VPS from the app directory after git pull.
 set -euo pipefail
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/.."
 
 echo "==> Installing dependencies"
 npm ci
