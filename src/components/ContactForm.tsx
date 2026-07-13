@@ -40,7 +40,7 @@ export function ContactForm() {
       setErrorMessage(
         "Contact form is not configured yet. Please set NEXT_PUBLIC_FORMSPREE_FORM_ID.",
       );
-      return;
+      return; 
     }
 
     setStatus("submitting");
