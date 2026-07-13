@@ -23,7 +23,7 @@ const INTENT_LABELS: Record<ContactIntent, string> = {
 };
 
 export function ContactForm() {
-  const [searchParams] = useSearchParams();
+  const searchParams = useSearchParams();
   const intent = useMemo(
     () => parseContactIntent(searchParams.toString()),
     [searchParams],
