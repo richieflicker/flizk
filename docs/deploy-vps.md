@@ -62,9 +62,19 @@ If deploy fails with `npm: command not found`, Node is installed but not on PATH
 
 ## nginx reverse proxy
 
-Save as `/etc/nginx/sites-available/flizk.com` and enable it:
+Save as `/etc/nginx/sites-available/flizk.com` and enable it. Only `flizk.com` and `www.flizk.com` should proxy to Next.js. Add a **default_server** that rejects every other Host (stops wildcard / junk subdomain duplicate indexing):
 
 ```nginx
+# Reject unknown Host (stops *.flizk.com duplicate indexing)
+server {
+    listen 80 default_server;
+    listen 443 ssl default_server;
+    server_name _;
+    ssl_certificate     /etc/letsencrypt/live/flizk.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/flizk.com/privkey.pem;
+    return 444;
+}
+
 server {
     listen 80;
     server_name flizk.com www.flizk.com;
@@ -88,21 +98,38 @@ server {
 }
 ```
 
+If another site currently owns `default_server`, either move that role here or ensure no other `server_name` catch-all serves Flizk content for unknown hosts. Remove `flizk.com` from any other nginx site (e.g. old static marketing configs).
+
 ```bash
 sudo ln -sf /etc/nginx/sites-available/flizk.com /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 sudo certbot --nginx -d flizk.com -d www.flizk.com
 ```
 
+Verify host lockdown (replace `VPS_IP` with your server IP):
+
+```bash
+curl -sI -H 'Host: garbage.flizk.com' https://VPS_IP --insecure | head
+# expect connection close / empty — not 200 HTML
+curl -sI https://flizk.com/ | head
+# expect 200
+```
+
 ## DNS cutover from GitHub Pages / Apache
 
 1. Point `flizk.com` (and `www`) **A/AAAA** to the VPS IP; remove GitHub Pages DNS.
 2. Remove old Apache document root / `.htaccess` SPA rewrite for this site.
-3. Verify SSR meta is live:
-   ```bash
-   curl -s https://flizk.com/dental-clinic-software-chennai | grep -E '<title>|og:image|canonical'
-   ```
+3. Verify SSR meta is live (see Health checks below).
 4. Resubmit `https://flizk.com/sitemap.xml` in Google Search Console.
+
+## Search Console & Core Web Vitals
+
+1. Verify `https://flizk.com` as a URL-prefix (or domain) property in [Google Search Console](https://search.google.com/search-console) (phone is fine).
+2. **URL Inspection** on `https://flizk.com/` — Page Fetch must be **Successful**. If the indexed title/description is still generic SPA boilerplate, use **Request Indexing**.
+3. Submit sitemap: `https://flizk.com/sitemap.xml`.
+4. Baseline CWV on [pagespeed.web.dev](https://pagespeed.web.dev) for `https://flizk.com/`.
+
+Do **not** add LocalBusiness schema for flizk.com (vendor SaaS site). Organization / SoftwareApplication / FAQ on product pages is correct.
 
 ## Health checks
 
@@ -111,4 +138,12 @@ pm2 status
 pm2 logs flizk --lines 50
 curl -sI http://127.0.0.1:3000/
 curl -sI https://flizk.com/
+```
+
+SSR smoke (title, canonical, JSON-LD must appear in the raw HTML, not only after JS):
+
+```bash
+curl -s https://flizk.com/ | grep -E '<title>|application/ld\+json|canonical'
+curl -s https://flizk.com/products/dentxone | grep -E '<title>|application/ld\+json|canonical'
+curl -s https://flizk.com/dental-clinic-software-chennai | grep -E '<title>|og:image|canonical'
 ```

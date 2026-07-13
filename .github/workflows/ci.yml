@@ -1,10 +1,8 @@
 name: CI
 
+# Disabled for now — re-enable push/PR triggers when needed.
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
