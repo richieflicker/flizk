@@ -127,29 +127,26 @@ export default function DentxonePage() {
       <JsonLd id="dentxone-software" data={softwareSchema} />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6] pt-32 pb-20 overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-
+      <section className="relative bg-brand-surface pt-32 pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-              <span className="text-white text-sm">Dental Clinic Management Software</span>
+            <div className="inline-flex items-center space-x-2 bg-brand-leaf-tint px-4 py-2 rounded-full mb-6">
+              <span className="text-brand-ink text-sm">Dental Clinic Management Software</span>
             </div>
 
             <Logo
               brand="dentxone"
               variant="mark"
-              theme="dark"
+              theme="light"
               className="h-16 w-16 mx-auto mb-4"
             />
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-ink mb-6 leading-tight">
               DentXOne
             </h1>
-            <p className="text-2xl md:text-3xl text-white/90 mb-8">
+            <p className="text-2xl md:text-3xl text-brand-ink/80 mb-8">
               Complete Dental Practice Management Platform
             </p>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-brand-muted max-w-3xl mx-auto mb-12">
               All-in-one solution for patient management, appointments, treatments, billing, and
               analytics. Built specifically for modern dental practices in India.
             </p>
@@ -157,7 +154,7 @@ export default function DentxonePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <CTAButton
                 href={CTA_PATHS.trial}
-                className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg"
+                className="bg-brand-leaf hover:bg-brand-leaf/90 text-white px-8 py-6 text-lg rounded-2xl shadow-[var(--shadow-soft)]"
               >
                 Start Free Trial
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -165,7 +162,7 @@ export default function DentxonePage() {
               <CTAButton
                 href={CTA_PATHS.demo}
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
+                className="bg-white border-0 rounded-2xl hover:text-brand-leaf px-8 py-6 text-lg"
               >
                 Book Demo
               </CTAButton>
@@ -184,10 +181,10 @@ export default function DentxonePage() {
       {/* What is Dental Clinic Management Software */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl font-bold text-brand-ink mb-6">
             What is Dental Clinic Management Software?
           </h2>
-          <div className="prose prose-lg text-gray-600 space-y-4">
+          <div className="prose prose-lg text-brand-muted space-y-4">
             <p>
               Dental clinic management software is a specialized digital platform designed to help
               dental practices manage their day-to-day operations efficiently. It replaces manual
@@ -209,30 +206,34 @@ export default function DentxonePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/20">
+      <section className="py-24 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-ink mb-4">
               Comprehensive Features for Dental Practices
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-brand-muted max-w-3xl mx-auto">
               Everything you need to run a successful dental clinic
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-gray-100"
+                  className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)]"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6] rounded-xl flex items-center justify-center mb-6">
-                    <Icon className="w-7 h-7 text-white" />
+                  <div
+                    className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${
+                      index % 2 === 0 ? "bg-brand-leaf-tint" : "bg-brand-teal-tint"
+                    }`}
+                  >
+                    <Icon className={`w-7 h-7 ${index % 2 === 0 ? "text-brand-leaf" : "text-brand-teal"}`} />
                   </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-2xl font-semibold text-brand-ink mb-4">{feature.title}</h3>
+                  <p className="text-brand-muted leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
@@ -245,59 +246,59 @@ export default function DentxonePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl font-bold text-brand-ink mb-6">
                 Why Choose DentXOne for Your Dental Practice?
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-[#22C55E] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-brand-leaf rounded-full flex items-center justify-center flex-shrink-0">
                     <Check className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                    <h4 className="text-xl font-semibold text-brand-ink mb-2">
                       Built for Indian Dental Clinics
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-brand-muted">
                       Designed with Indian dental practices in mind, with support for INR currency,
                       local regulations, and Indian payment methods.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-[#22C55E] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-brand-leaf rounded-full flex items-center justify-center flex-shrink-0">
                     <Check className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-gray-900 mb-2">Easy to Use</h4>
-                    <p className="text-gray-600">
+                    <h4 className="text-xl font-semibold text-brand-ink mb-2">Easy to Use</h4>
+                    <p className="text-brand-muted">
                       Intuitive interface that requires minimal training. Your staff can start using
                       DentXOne within minutes.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-[#22C55E] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-brand-leaf rounded-full flex items-center justify-center flex-shrink-0">
                     <Check className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                    <h4 className="text-xl font-semibold text-brand-ink mb-2">
                       Flexible Plans
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-brand-muted">
                       Plans for single clinics and multi-location networks. Contact us for a quote
                       tailored to your practice — no long-term contracts required.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-[#22C55E] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-brand-leaf rounded-full flex items-center justify-center flex-shrink-0">
                     <Check className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                    <h4 className="text-xl font-semibold text-brand-ink mb-2">
                       Reliable Support
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-brand-muted">
                       Dedicated customer support team ready to help you with onboarding, training, and
                       any questions you may have.
                     </p>
@@ -307,25 +308,25 @@ export default function DentxonePage() {
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center">
-                <Smartphone className="w-12 h-12 text-[#1E4ED8] mx-auto mb-4" />
-                <h4 className="font-semibold text-gray-900 mb-2">Mobile Friendly</h4>
-                <p className="text-sm text-gray-600">Works on any device</p>
+              <div className="bg-brand-leaf-tint rounded-2xl p-6 text-center">
+                <Smartphone className="w-12 h-12 text-brand-leaf mx-auto mb-4" />
+                <h4 className="font-semibold text-brand-ink mb-2">Mobile Friendly</h4>
+                <p className="text-sm text-brand-muted">Works on any device</p>
               </div>
-              <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 text-center">
-                <Cloud className="w-12 h-12 text-[#14B8A6] mx-auto mb-4" />
-                <h4 className="font-semibold text-gray-900 mb-2">Cloud Based</h4>
-                <p className="text-sm text-gray-600">Access from anywhere</p>
+              <div className="bg-brand-teal-tint rounded-2xl p-6 text-center">
+                <Cloud className="w-12 h-12 text-brand-teal mx-auto mb-4" />
+                <h4 className="font-semibold text-brand-ink mb-2">Cloud Based</h4>
+                <p className="text-sm text-brand-muted">Access from anywhere</p>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 text-center">
-                <Shield className="w-12 h-12 text-[#22C55E] mx-auto mb-4" />
-                <h4 className="font-semibold text-gray-900 mb-2">Secure</h4>
-                <p className="text-sm text-gray-600">Bank-level encryption</p>
+              <div className="bg-brand-leaf-tint rounded-2xl p-6 text-center">
+                <Shield className="w-12 h-12 text-brand-leaf mx-auto mb-4" />
+                <h4 className="font-semibold text-brand-ink mb-2">Secure</h4>
+                <p className="text-sm text-brand-muted">Bank-level encryption</p>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 text-center">
-                <BarChart3 className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <h4 className="font-semibold text-gray-900 mb-2">Analytics</h4>
-                <p className="text-sm text-gray-600">Detailed insights</p>
+              <div className="bg-brand-teal-tint rounded-2xl p-6 text-center">
+                <BarChart3 className="w-12 h-12 text-brand-teal mx-auto mb-4" />
+                <h4 className="font-semibold text-brand-ink mb-2">Analytics</h4>
+                <p className="text-sm text-brand-muted">Detailed insights</p>
               </div>
             </div>
           </div>
@@ -333,20 +334,20 @@ export default function DentxonePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/20">
+      <section className="py-24 bg-brand-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-brand-ink mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-600">Everything you need to know about DentXOne</p>
+            <p className="text-xl text-brand-muted">Everything you need to know about DentXOne</p>
           </div>
 
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{faq.question}</h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+              <div key={index} className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)]">
+                <h3 className="text-xl font-semibold text-brand-ink mb-4">{faq.question}</h3>
+                <p className="text-brand-muted leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -354,7 +355,7 @@ export default function DentxonePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6]">
+      <section className="py-24 bg-gradient-to-br from-brand-leaf to-brand-teal">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Transform Your Dental Practice?
@@ -365,7 +366,7 @@ export default function DentxonePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <CTAButton
               href={CTA_PATHS.trial}
-              className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg"
+              className="bg-white text-brand-leaf hover:bg-gray-100 px-8 py-6 text-lg rounded-2xl"
             >
               Start Free Trial
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -373,7 +374,7 @@ export default function DentxonePage() {
             <CTAButton
               href={CTA_PATHS.demo}
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
+              className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg rounded-2xl"
             >
               Schedule Demo
             </CTAButton>
