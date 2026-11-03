@@ -70,23 +70,28 @@ export function LogoIntro() {
   useEffect(() => {
     if (!isHome) return;
 
-    let reduceMotion = false;
-    let alreadyPlayed = false;
-    try {
-      reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      alreadyPlayed = sessionStorage.getItem(FLIZK_INTRO_SESSION_KEY) === "1";
-    } catch {
-      // sessionStorage/matchMedia unavailable — fall through to playing the intro
-    }
-
-    if (reduceMotion || alreadyPlayed) {
-      settleInstantly();
-      return;
-    }
-
     let cancelled = false;
     import("gsap").then(({ gsap }) => {
       if (cancelled) return;
+
+      let reduceMotion = false;
+      let alreadyPlayed = false;
+      try {
+        reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        alreadyPlayed = sessionStorage.getItem(FLIZK_INTRO_SESSION_KEY) === "1";
+      } catch {
+        // sessionStorage/matchMedia unavailable — fall through to playing the intro
+      }
+
+      if (reduceMotion || alreadyPlayed) {
+        settleInstantly();
+        // the hero still gets its own reveal on every real page load — reduceMotion snaps it
+        // straight to visible, a plain repeat visit (already played, motion is fine) fades it
+        // in just like a first visit would
+        animateHeroIn(gsap, reduceMotion);
+        return;
+      }
+
       startIntro(gsap);
     });
 
@@ -286,31 +291,32 @@ export function LogoIntro() {
           overlay.style.display = "none";
           document.body.classList.remove("flizk-intro-locked");
           skipBtn.style.display = "none";
-          // the clone is pixel-identical to the real logo — swap instantly, no visible pop
+          // the real logo is revealed now, but stays hidden behind the clone (which sits exactly
+          // on top of it, pixel-identical) until the wind gust below finishes playing on it —
+          // only then do we hide the clone, so the gust is actually visible instead of running
+          // on an already-display:none element
           if (slotImg) slotImg.style.opacity = "1";
           document.documentElement.classList.remove("flizk-intro-active");
           markIntroPlayed();
-          clone.style.display = "none";
           animateHeroIn(gsap, false);
         })
-        .add(() => windGust(gsap), "+=0.5");
+        .add(() => windGust(gsap, clone), "+=0.5");
     });
   }
 
   // one-time directional wind gust — plays once right after landing, then every petal is reset
   // to 0 and the transform attribute removed entirely. No loop, no residue, nothing left behind.
-  function windGust(gsap: typeof import("gsap").gsap) {
-    // this plays on the real header logo's own inline clone only if it's still mounted; since
-    // settleInstantly already swapped to the real <img>, the gust targets the clone's own petals
-    // while it's still briefly visible before display:none — harmless no-op if already hidden
-    const clone = cloneWrapRef.current;
-    if (!clone) return;
+  function windGust(gsap: typeof import("gsap").gsap, clone: HTMLDivElement) {
     const lfs = clone.querySelectorAll(".petal .lf");
     if (!lfs.length) return;
     const state = [0, 1, 2, 3, 4].map(() => ({ r: 0 }));
     const setRot = (i: number, r: number) => lfs[i].setAttribute("transform", `rotate(${r} 0 -4)`);
     const master = gsap.timeline({
-      onComplete: () => lfs.forEach((lf) => lf.removeAttribute("transform")),
+      onComplete: () => {
+        lfs.forEach((lf) => lf.removeAttribute("transform"));
+        // only now does the clone hand off to the real (pixel-identical) header logo underneath
+        clone.style.display = "none";
+      },
     });
     const add = (i: number, amp: number, dur: number, at: number) => {
       master
@@ -344,6 +350,10 @@ export function LogoIntro() {
       if (bigMarkWrapRef.current) gsap.killTweensOf(bigMarkWrapRef.current);
       const slotImg = document.querySelector<HTMLElement>("#header-logo-slot img");
       if (slotImg) slotImg.style.opacity = "1";
+      if (cloneWrapRef.current) {
+        cloneWrapRef.current.style.display = "none";
+        cloneWrapRef.current.querySelectorAll(".petal .lf").forEach((lf) => lf.removeAttribute("transform"));
+      }
       gsap.set("#site-header", { y: "0%" });
       settleInstantly();
       animateHeroIn(gsap, true);
