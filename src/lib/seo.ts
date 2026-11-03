@@ -51,8 +51,9 @@ export const PAGE_SEO = {
     path: "/contact",
   },
   privacy: {
-    title: "Privacy Policy | Flizk",
-    description: "How Flizk collects, uses, and protects your information when you use our website and contact forms.",
+    title: "Privacy Policy | Flizk DentXOne",
+    description:
+      "How DentXOne by Flizk collects, uses, shares and protects patient data for WhatsApp appointment messaging, including consent, opt-out and data deletion.",
     path: "/privacy",
   },
   terms: {
