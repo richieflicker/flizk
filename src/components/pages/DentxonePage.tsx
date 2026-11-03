@@ -1,5 +1,6 @@
 import { CTAButton } from "@/components/CTAButton";
 import { JsonLd } from "@/components/JsonLd";
+import { Logo } from "@/components/Logo";
 import { CTA_PATHS } from "@/lib/cta";
 import {pageUrl} from "@/lib/seo";
 import { DashboardMockup } from "@/components/DashboardMockup";
@@ -136,6 +137,12 @@ export default function DentxonePage() {
               <span className="text-white text-sm">Dental Clinic Management Software</span>
             </div>
 
+            <Logo
+              brand="dentxone"
+              variant="mark"
+              theme="dark"
+              className="h-16 w-16 mx-auto mb-4"
+            />
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               DentXOne
             </h1>

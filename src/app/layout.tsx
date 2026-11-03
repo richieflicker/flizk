@@ -9,7 +9,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   ...buildMetadata(PAGE_SEO.home),
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/flizk-favicon.svg", type: "image/svg+xml" },
+      { url: "/flizk-favicon.ico", sizes: "any" },
+    ],
+    apple: "/flizk-180.png",
   },
 };
 

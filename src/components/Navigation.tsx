@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { CTAButton } from "./CTAButton";
+import { Logo } from "./Logo";
 import { CTA_PATHS } from "@/lib/cta";
 
 export function Navigation() {
@@ -14,11 +15,8 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-[#1E4ED8] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">F</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900">Flizk</span>
+            <Link href="/" className="flex items-center">
+              <Logo brand="flizk" theme="light" className="h-8 w-auto" />
             </Link>
           </div>
 
