@@ -9,26 +9,32 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-brand-leaf-tint px-4 py-2 rounded-full mb-6">
+          <div
+            data-intro-reveal
+            className="inline-flex items-center space-x-2 bg-brand-leaf-tint px-4 py-2 rounded-full mb-6"
+          >
             <Sparkles className="w-4 h-4 text-brand-leaf" />
             <span className="text-sm text-brand-ink">Introducing DentXOne</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-ink mb-6 leading-tight">
+          <h1
+            data-intro-reveal
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-ink mb-6 leading-tight"
+          >
             Modern Technology for
             <br />
             Smarter Clinics
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-brand-muted max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p data-intro-reveal className="text-xl md:text-2xl text-brand-muted max-w-3xl mx-auto mb-8 leading-relaxed">
             Flizk builds powerful healthcare software platforms that help clinics manage patients,
             appointments, treatments, billing, and operations efficiently.
           </p>
 
           {/* Product Highlight */}
-          <div className="max-w-2xl mx-auto mb-10">
+          <div data-intro-reveal className="max-w-2xl mx-auto mb-10">
             <div className="bg-white rounded-[20px] p-6 shadow-[var(--shadow-soft)]">
               <div className="flex items-center justify-center space-x-2 mb-2">
                 <div className="w-8 h-8 bg-gradient-to-br from-brand-leaf to-brand-teal rounded-xl flex items-center justify-center">
@@ -43,7 +49,7 @@ export function HeroSection() {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+          <div data-intro-reveal className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
             <CTAButton
               href={CTA_PATHS.trial}
               className="bg-brand-leaf hover:bg-brand-leaf/90 text-white px-8 py-6 text-lg rounded-2xl shadow-[var(--shadow-soft)] transition-all"
