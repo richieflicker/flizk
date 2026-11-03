@@ -12,7 +12,7 @@ export function PlatformSection() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-[#1E4ED8]">
+    <section className="py-24 bg-brand-ink">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -35,7 +35,7 @@ export function PlatformSection() {
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-[#22C55E] flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 rounded-full bg-brand-leaf flex items-center justify-center flex-shrink-0 mt-1">
                   <svg
                     className="w-4 h-4 text-white"
                     fill="none"
@@ -59,7 +59,7 @@ export function PlatformSection() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-[#22C55E] flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 rounded-full bg-brand-leaf flex items-center justify-center flex-shrink-0 mt-1">
                   <svg
                     className="w-4 h-4 text-white"
                     fill="none"
@@ -83,7 +83,7 @@ export function PlatformSection() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full bg-[#22C55E] flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 rounded-full bg-brand-leaf flex items-center justify-center flex-shrink-0 mt-1">
                   <svg
                     className="w-4 h-4 text-white"
                     fill="none"
@@ -109,7 +109,7 @@ export function PlatformSection() {
 
             <Link
               href="/about"
-              className="inline-block bg-white hover:bg-gray-100 text-[#1E4ED8] px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
+              className="inline-block bg-white hover:bg-gray-100 text-brand-leaf px-8 py-4 rounded-2xl font-medium shadow-[var(--shadow-soft)] transition-all"
             >
               Learn About Flizk Platform
             </Link>
@@ -117,12 +117,12 @@ export function PlatformSection() {
 
           {/* Right - Platform Diagram */}
           <div className="relative">
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+            <div className="bg-white/10 backdrop-blur-md rounded-[28px] p-8 border border-white/20">
               {/* Central Hub */}
               <div className="relative">
-                <div className="bg-gradient-to-br from-white to-blue-100 rounded-2xl p-8 shadow-2xl mb-8">
+                <div className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)] mb-8">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-brand-leaf to-brand-teal rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <span className="text-white font-bold text-2xl">F</span>
                     </div>
                     <h3 className="font-bold text-gray-900 text-xl mb-2">Flizk Platform</h3>
@@ -139,7 +139,7 @@ export function PlatformSection() {
                         key={index}
                         className="bg-white/90 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white transition-colors"
                       >
-                        <Icon className="w-8 h-8 text-[#1E4ED8] mx-auto mb-2" />
+                        <Icon className="w-8 h-8 text-brand-leaf mx-auto mb-2" />
                         <p className="text-xs text-gray-700 font-medium">{feature.label}</p>
                       </div>
                     );
@@ -152,8 +152,8 @@ export function PlatformSection() {
             </div>
 
             {/* Decorative Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#14B8A6] rounded-2xl opacity-20 blur-xl"></div>
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#22C55E] rounded-2xl opacity-20 blur-xl"></div>
+            <div className="absolute -top-4 -right-4 w-20 h-20 bg-brand-teal rounded-2xl opacity-20 blur-xl"></div>
+            <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-brand-leaf rounded-2xl opacity-20 blur-xl"></div>
           </div>
         </div>
       </div>

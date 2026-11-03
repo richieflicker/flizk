@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { CTAButton } from "./CTAButton";
+import { Logo } from "./Logo";
 import { CTA_PATHS } from "@/lib/cta";
 
 export function Navigation() {
@@ -14,26 +15,23 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-[#1E4ED8] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">F</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900">Flizk</span>
+            <Link href="/" className="flex items-center">
+              <Logo brand="flizk" theme="light" className="h-8 w-auto" />
             </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/products/dentxone" className="text-gray-700 hover:text-[#1E4ED8] transition-colors">
+            <Link href="/products/dentxone" className="text-gray-700 hover:text-brand-leaf transition-colors">
               Products
             </Link>
-            <Link href="/pricing" className="text-gray-700 hover:text-[#1E4ED8] transition-colors">
+            <Link href="/pricing" className="text-gray-700 hover:text-brand-leaf transition-colors">
               Pricing
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-[#1E4ED8] transition-colors">
+            <Link href="/about" className="text-gray-700 hover:text-brand-leaf transition-colors">
               About
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-[#1E4ED8] transition-colors">
+            <Link href="/contact" className="text-gray-700 hover:text-brand-leaf transition-colors">
               Contact
             </Link>
           </div>
@@ -42,7 +40,7 @@ export function Navigation() {
           <div className="hidden md:block">
             <CTAButton
               href={CTA_PATHS.trial}
-              className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-6"
+              className="bg-brand-leaf hover:bg-brand-leaf/90 text-white px-6 rounded-2xl"
             >
               Start Free Trial
             </CTAButton>
@@ -68,35 +66,35 @@ export function Navigation() {
           <div className="px-4 py-6 space-y-4">
             <Link
               href="/products/dentxone"
-              className="block text-gray-700 hover:text-[#1E4ED8] transition-colors"
+              className="block text-gray-700 hover:text-brand-leaf transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Products
             </Link>
             <Link
               href="/pricing"
-              className="block text-gray-700 hover:text-[#1E4ED8] transition-colors"
+              className="block text-gray-700 hover:text-brand-leaf transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Pricing
             </Link>
             <Link
               href="/about"
-              className="block text-gray-700 hover:text-[#1E4ED8] transition-colors"
+              className="block text-gray-700 hover:text-brand-leaf transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="block text-gray-700 hover:text-[#1E4ED8] transition-colors"
+              className="block text-gray-700 hover:text-brand-leaf transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
             </Link>
             <CTAButton
               href={CTA_PATHS.trial}
-              className="w-full bg-[#1E4ED8] hover:bg-[#1a42b8] text-white"
+              className="w-full bg-brand-leaf hover:bg-brand-leaf/90 text-white rounded-2xl"
             >
               Start Free Trial
             </CTAButton>

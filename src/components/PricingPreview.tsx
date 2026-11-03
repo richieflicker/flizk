@@ -52,30 +52,30 @@ const plans = [
 
 export function PricingPreview() {
   return (
-    <section id="pricing" className="py-24 bg-white">
+    <section id="pricing" className="py-24 bg-brand-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-ink mb-4">
             Plans for Every Dental Practice
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-brand-muted max-w-2xl mx-auto">
             Choose the plan that fits your clinic. Contact us for a quote tailored to your needs.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-3xl p-8 ${
+              className={`relative rounded-[20px] p-8 shadow-[var(--shadow-soft)] ${
                 plan.popular
-                  ? "bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6] text-white shadow-2xl scale-105"
-                  : "bg-white border-2 border-gray-200 hover:border-gray-300 shadow-lg"
+                  ? "bg-gradient-to-br from-brand-leaf to-brand-teal text-white"
+                  : "bg-white"
               } transition-all duration-300`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-[#22C55E] text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center space-x-1">
+                  <div className="bg-white text-brand-leaf px-4 py-1 rounded-full text-sm font-semibold flex items-center space-x-1 shadow-[var(--shadow-soft)]">
                     <Sparkles className="w-4 h-4" />
                     <span>Most Popular</span>
                   </div>
@@ -84,7 +84,7 @@ export function PricingPreview() {
 
               <h3
                 className={`text-2xl font-bold mb-2 ${
-                  plan.popular ? "text-white" : "text-gray-900"
+                  plan.popular ? "text-white" : "text-brand-ink"
                 }`}
               >
                 {plan.name}
@@ -92,7 +92,7 @@ export function PricingPreview() {
 
               <p
                 className={`text-sm mb-8 ${
-                  plan.popular ? "text-white/90" : "text-gray-600"
+                  plan.popular ? "text-white/90" : "text-brand-muted"
                 }`}
               >
                 {plan.description}
@@ -100,10 +100,10 @@ export function PricingPreview() {
 
               <CTAButton
                 href={CTA_PATHS.contact}
-                className={`w-full mb-8 py-6 ${
+                className={`w-full mb-8 py-6 rounded-2xl ${
                   plan.popular
-                    ? "bg-white text-[#1E4ED8] hover:bg-gray-100"
-                    : "bg-[#1E4ED8] text-white hover:bg-[#1a42b8]"
+                    ? "bg-white text-brand-leaf hover:bg-gray-100"
+                    : "bg-brand-leaf text-white hover:bg-brand-leaf/90"
                 }`}
               >
                 Contact Us
@@ -114,12 +114,12 @@ export function PricingPreview() {
                   <div key={feature} className="flex items-start space-x-3">
                     <Check
                       className={`w-5 h-5 flex-shrink-0 ${
-                        plan.popular ? "text-white" : "text-[#22C55E]"
+                        plan.popular ? "text-white" : "text-brand-leaf"
                       }`}
                     />
                     <span
                       className={`text-sm ${
-                        plan.popular ? "text-white/90" : "text-gray-700"
+                        plan.popular ? "text-white/90" : "text-brand-ink/80"
                       }`}
                     >
                       {feature}
@@ -132,7 +132,7 @@ export function PricingPreview() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-gray-600">
+          <p className="text-brand-muted">
             Tell us about your clinic and we&apos;ll recommend the right DentXOne plan.
           </p>
         </div>

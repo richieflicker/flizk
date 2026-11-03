@@ -9,7 +9,7 @@ const steps = [
     title: "Set up your clinic",
     description:
       "Quick onboarding process to configure your clinic details, staff, and preferences in minutes.",
-    color: "from-[#1E4ED8] to-blue-600",
+    color: "from-brand-leaf to-brand-teal",
   },
   {
     number: "02",
@@ -17,7 +17,7 @@ const steps = [
     title: "Manage patients and appointments",
     description:
       "Add patients, schedule appointments, send automated reminders, and manage your daily schedule effortlessly.",
-    color: "from-[#14B8A6] to-teal-600",
+    color: "from-brand-teal to-brand-leaf",
   },
   {
     number: "03",
@@ -25,22 +25,22 @@ const steps = [
     title: "Track treatments, billing and reports",
     description:
       "Monitor treatment progress, generate invoices, accept payments, and analyze clinic performance with comprehensive reports.",
-    color: "from-[#22C55E] to-green-600",
+    color: "from-brand-leaf to-brand-teal",
   },
 ];
 
 export function WorkflowSection() {
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/30">
+    <section className="py-24 bg-brand-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-ink mb-4">
             How DentXOne Simplifies
             <br />
             Clinic Operations
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-brand-muted max-w-2xl mx-auto">
             Get started in three simple steps and transform your dental practice workflow
           </p>
         </div>
@@ -64,12 +64,12 @@ export function WorkflowSection() {
                   {/* Step Number & Icon */}
                   <div className="flex-shrink-0 relative">
                     <div
-                      className={`w-32 h-32 bg-gradient-to-br ${step.color} rounded-3xl flex items-center justify-center shadow-2xl`}
+                      className={`w-32 h-32 bg-gradient-to-br ${step.color} rounded-[28px] flex items-center justify-center shadow-[var(--shadow-soft)]`}
                     >
                       <Icon className="w-16 h-16 text-white" />
                     </div>
-                    <div className="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg border-4 border-gray-50">
-                      <span className="text-2xl font-bold text-gray-900">{step.number}</span>
+                    <div className="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-[var(--shadow-soft)] border-4 border-brand-surface">
+                      <span className="text-2xl font-bold text-brand-ink">{step.number}</span>
                     </div>
                   </div>
 
@@ -84,12 +84,12 @@ export function WorkflowSection() {
 
                   {/* Step Content */}
                   <div
-                    className={`flex-1 bg-white rounded-2xl p-8 shadow-lg border border-gray-100 ${
+                    className={`flex-1 bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)] ${
                       index % 2 === 1 ? "lg:text-right" : ""
                     }`}
                   >
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                    <p className="text-lg text-gray-600 leading-relaxed">{step.description}</p>
+                    <h3 className="text-2xl font-bold text-brand-ink mb-4">{step.title}</h3>
+                    <p className="text-lg text-brand-muted leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               </div>
@@ -99,10 +99,10 @@ export function WorkflowSection() {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-4">Ready to streamline your clinic operations?</p>
+          <p className="text-brand-muted mb-4">Ready to streamline your clinic operations?</p>
           <Link
             href={CTA_PATHS.trial}
-            className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all inline-flex items-center space-x-2"
+            className="bg-brand-leaf hover:bg-brand-leaf/90 text-white px-8 py-4 rounded-2xl font-medium shadow-[var(--shadow-soft)] transition-all inline-flex items-center space-x-2"
           >
             <span>Start Free Trial</span>
             <ArrowRight className="w-5 h-5" />
