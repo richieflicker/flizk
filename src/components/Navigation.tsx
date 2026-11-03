@@ -16,7 +16,7 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <Logo brand="flizk" theme="light" className="h-8 w-auto" />
+              <Logo brand="flizk" theme="light" className="h-10 w-auto" />
             </Link>
           </div>
 
