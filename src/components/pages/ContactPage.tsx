@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Clock, Mail, MessageSquare, Calendar } from "lucide-react";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { CTA_PATHS } from "@/lib/cta";
 
 const contactMethods = [
@@ -31,20 +32,21 @@ export default function ContactPage() {
 
       <section className="pt-32 pb-20 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <ScrollReveal className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-brand-ink mb-6">Get in Touch</h1>
             <p className="text-xl md:text-2xl text-brand-muted max-w-3xl mx-auto">
               Have questions about DentXOne or Flizk? We&apos;re here to help. Reach out and
               let&apos;s talk about how we can transform your dental practice.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {contactMethods.map((method) => {
+            {contactMethods.map((method, index) => {
               const Icon = method.icon;
               return (
-                <div
+                <ScrollReveal
                   key={method.title}
+                  delay={index * 100}
                   className="bg-white rounded-[20px] p-6 shadow-[var(--shadow-soft)]"
                 >
                   <div
@@ -64,7 +66,7 @@ export default function ContactPage() {
                     <p className="text-brand-leaf font-medium mb-2">{method.detail}</p>
                   )}
                   <p className="text-sm text-brand-muted">{method.description}</p>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
@@ -74,7 +76,7 @@ export default function ContactPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
-            <div>
+            <ScrollReveal>
               <div className="mb-8">
                 <h2 className="text-4xl font-bold text-brand-ink mb-4">Send Us a Message</h2>
                 <p className="text-xl text-brand-muted">
@@ -84,9 +86,9 @@ export default function ContactPage() {
               <Suspense fallback={<p className="text-brand-muted">Loading form…</p>}>
                 <ContactForm />
               </Suspense>
-            </div>
+            </ScrollReveal>
 
-            <div className="space-y-8">
+            <ScrollReveal delay={150} className="space-y-8">
               <div className="bg-brand-leaf-tint rounded-[20px] p-8">
                 <h3 className="text-2xl font-bold text-brand-ink mb-6">Quick Actions</h3>
                 <div className="space-y-4">
@@ -153,29 +155,29 @@ export default function ContactPage() {
                   </Link>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       <section className="py-24 bg-brand-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <ScrollReveal className="text-center mb-16">
             <h2 className="text-4xl font-bold text-brand-ink mb-4">Common Questions</h2>
             <p className="text-xl text-brand-muted">Quick answers to questions you may have</p>
-          </div>
+          </ScrollReveal>
 
           <div className="space-y-6">
-            <div className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)]">
+            <ScrollReveal className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)]">
               <h3 className="text-xl font-semibold text-brand-ink mb-3">
                 How quickly will I hear back?
               </h3>
               <p className="text-brand-muted">
                 We usually reply within 1 business day.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)]">
+            <ScrollReveal delay={100} className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)]">
               <h3 className="text-xl font-semibold text-brand-ink mb-3">
                 Can I schedule a product demo?
               </h3>
@@ -186,9 +188,9 @@ export default function ContactPage() {
                 </Link>{" "}
                 option and we&apos;ll walk you through DentXOne live.
               </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)]">
+            <ScrollReveal delay={200} className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)]">
               <h3 className="text-xl font-semibold text-brand-ink mb-3">
                 How do I get support?
               </h3>
@@ -200,7 +202,7 @@ export default function ContactPage() {
                 for the fastest response, or fill out the form on this page and we&apos;ll follow
                 up within one business day.
               </p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
