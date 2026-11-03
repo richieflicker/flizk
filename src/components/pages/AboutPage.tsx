@@ -8,28 +8,32 @@ const values = [
     title: "Mission-Driven",
     description:
       "We're on a mission to modernize healthcare technology and make it accessible to every clinic.",
-    color: "from-blue-500 to-blue-600",
+    tint: "bg-brand-leaf-tint",
+    iconColor: "text-brand-leaf",
   },
   {
     icon: Users,
     title: "Customer-Centric",
     description:
       "Our customers are at the heart of everything we do. We build features based on real clinic needs.",
-    color: "from-teal-500 to-teal-600",
+    tint: "bg-brand-teal-tint",
+    iconColor: "text-brand-teal",
   },
   {
     icon: Lightbulb,
     title: "Innovation",
     description:
       "We constantly innovate and improve our platform with the latest technology and best practices.",
-    color: "from-green-500 to-green-600",
+    tint: "bg-gradient-to-br from-brand-leaf to-brand-teal",
+    iconColor: "text-white",
   },
   {
     icon: Heart,
     title: "Healthcare First",
     description:
       "We understand healthcare workflows and design our products specifically for medical professionals.",
-    color: "from-purple-500 to-purple-600",
+    tint: "bg-brand-leaf-tint",
+    iconColor: "text-brand-leaf",
   },
 ];
 
@@ -71,11 +75,11 @@ export default function AboutPage() {
     <>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6]">
+      <section className="pt-32 pb-20 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">About Flizk</h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-5xl md:text-6xl font-bold text-brand-ink mb-6">About Flizk</h1>
+            <p className="text-xl md:text-2xl text-brand-muted max-w-3xl mx-auto leading-relaxed">
               We're building the future of healthcare technology. Starting with dental clinics,
               expanding to transform healthcare operations globally.
             </p>
@@ -87,10 +91,10 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+            <h2 className="text-4xl font-bold text-brand-ink mb-6">Our Story</h2>
           </div>
 
-          <div className="prose prose-lg text-gray-600 space-y-6">
+          <div className="prose prose-lg text-brand-muted space-y-6">
             <p>
               Flizk was founded with a simple observation: healthcare providers were spending too
               much time on administrative tasks and too little time on patient care. We saw clinics
@@ -117,15 +121,15 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50/20">
+      <section className="py-20 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-5xl md:text-6xl font-bold text-[#1E4ED8] mb-2">
+                <div className="text-5xl md:text-6xl font-bold text-brand-leaf mb-2">
                   {stat.number}
                 </div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-brand-muted">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -137,7 +141,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Mission */}
-            <div className="bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6] rounded-3xl p-12 text-white">
+            <div className="bg-gradient-to-br from-brand-leaf to-brand-teal rounded-[20px] p-12 text-white shadow-[var(--shadow-soft)]">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                 <Target className="w-8 h-8 text-white" />
               </div>
@@ -150,7 +154,7 @@ export default function AboutPage() {
             </div>
 
             {/* Vision */}
-            <div className="bg-gradient-to-br from-[#22C55E] to-green-600 rounded-3xl p-12 text-white">
+            <div className="bg-gradient-to-br from-brand-teal to-brand-leaf rounded-[20px] p-12 text-white shadow-[var(--shadow-soft)]">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
@@ -166,30 +170,30 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/20">
+      <section className="py-24 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-brand-ink mb-4">Our Values</h2>
+            <p className="text-xl text-brand-muted max-w-3xl mx-auto">
               The principles that guide everything we do
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-gray-100"
+                  className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)]"
                 >
                   <div
-                    className={`w-14 h-14 bg-gradient-to-br ${value.color} rounded-xl flex items-center justify-center mb-6`}
+                    className={`w-14 h-14 ${value.tint} rounded-2xl flex items-center justify-center mb-6`}
                   >
-                    <Icon className="w-7 h-7 text-white" />
+                    <Icon className={`w-7 h-7 ${value.iconColor}`} />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                  <h3 className="text-xl font-semibold text-brand-ink mb-3">{value.title}</h3>
+                  <p className="text-brand-muted leading-relaxed">{value.description}</p>
                 </div>
               );
             })}
@@ -201,13 +205,13 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
-            <p className="text-xl text-gray-600">Key milestones in the Flizk story</p>
+            <h2 className="text-4xl font-bold text-brand-ink mb-4">Our Journey</h2>
+            <p className="text-xl text-brand-muted">Key milestones in the Flizk story</p>
           </div>
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#1E4ED8] via-[#14B8A6] to-[#22C55E] transform -translate-x-1/2"></div>
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-leaf to-brand-teal transform -translate-x-1/2"></div>
 
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
@@ -220,18 +224,18 @@ export default function AboutPage() {
                   {/* Content */}
                   <div className="flex-1 lg:text-right lg:pr-8">
                     <div
-                      className={`bg-white rounded-2xl p-8 shadow-lg border border-gray-100 ${
+                      className={`bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)] ${
                         index % 2 === 1 ? "lg:text-left lg:pl-8 lg:pr-0" : ""
                       }`}
                     >
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                      <h3 className="text-2xl font-bold text-brand-ink mb-2">{milestone.title}</h3>
+                      <p className="text-brand-muted leading-relaxed">{milestone.description}</p>
                     </div>
                   </div>
 
                   {/* Year Badge */}
                   <div className="relative z-10">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-xl">
+                    <div className="w-24 h-24 bg-gradient-to-br from-brand-leaf to-brand-teal rounded-full flex items-center justify-center text-white font-bold text-xl shadow-[var(--shadow-soft)]">
                       {milestone.year}
                     </div>
                   </div>
@@ -246,18 +250,18 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/20">
+      <section className="py-24 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Built by a Passionate Team</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-brand-ink mb-4">Built by a Passionate Team</h2>
+            <p className="text-xl text-brand-muted max-w-3xl mx-auto">
               We're a team of engineers, designers, and healthcare experts committed to building the
               best healthcare technology platform. We're always looking for talented people to join
               us.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6] rounded-3xl p-12 text-center text-white">
+          <div className="bg-gradient-to-br from-brand-leaf to-brand-teal rounded-[20px] p-12 text-center text-white shadow-[var(--shadow-soft)]">
             <Award className="w-16 h-16 mx-auto mb-6 text-white" />
             <h3 className="text-3xl font-bold mb-4">Join Our Team</h3>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
@@ -266,7 +270,7 @@ export default function AboutPage() {
             </p>
             <Link
               href={CTA_PATHS.contact}
-              className="inline-block bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
+              className="inline-block bg-white text-brand-leaf hover:bg-gray-100 px-8 py-4 rounded-2xl font-medium transition-all"
             >
               View Open Positions
             </Link>
@@ -277,22 +281,22 @@ export default function AboutPage() {
       {/* Final CTA */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-ink mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-brand-muted mb-8">
             Start a free trial of DentXOne and see how it fits your dental practice.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href={CTA_PATHS.trial}
-              className="bg-[#1E4ED8] hover:bg-[#1a42b8] text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
+              className="bg-brand-leaf hover:bg-brand-leaf/90 text-white px-8 py-4 rounded-2xl font-medium shadow-[var(--shadow-soft)] transition-all"
             >
               Start Free Trial
             </Link>
             <Link
               href={CTA_PATHS.contact}
-              className="border-2 border-gray-300 hover:border-[#1E4ED8] text-gray-700 hover:text-[#1E4ED8] px-8 py-4 rounded-xl font-medium transition-all"
+              className="bg-white hover:bg-gray-50 text-brand-ink hover:text-brand-leaf px-8 py-4 rounded-2xl font-medium transition-all"
             >
               Contact Us
             </Link>

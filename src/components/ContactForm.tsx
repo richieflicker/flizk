@@ -73,9 +73,9 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-green-200 bg-green-50 p-8 text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-3">Message sent</h3>
-        <p className="text-gray-600 mb-6">
+      <div className="rounded-[20px] bg-brand-leaf-tint p-8 text-center">
+        <h3 className="text-2xl font-bold text-brand-ink mb-3">Message sent</h3>
+        <p className="text-brand-muted mb-6">
           Thanks for reaching out. We&apos;ll get back to you within one business day.
         </p>
         <Button asChild variant="outline">
@@ -91,7 +91,7 @@ export function ContactForm() {
       <input type="hidden" name="_subject" value={`Flizk contact: ${INTENT_LABELS[intent]}`} />
 
       {intent !== "general" && (
-        <div className="rounded-xl border border-blue-100 bg-blue-50 px-4 py-3 text-sm text-blue-900">
+        <div className="rounded-2xl bg-brand-leaf-tint px-4 py-3 text-sm text-brand-ink">
           You&apos;re contacting us about: <strong>{INTENT_LABELS[intent]}</strong>
         </div>
       )}
@@ -106,7 +106,7 @@ export function ContactForm() {
             name="firstName"
             type="text"
             placeholder="John"
-            className="w-full bg-gray-50 border-gray-200 focus:border-[#1E4ED8] focus:ring-[#1E4ED8]"
+            className="w-full bg-gray-50 border-gray-200 focus:border-brand-leaf focus:ring-brand-leaf"
             required
             disabled={status === "submitting"}
           />
@@ -120,7 +120,7 @@ export function ContactForm() {
             name="lastName"
             type="text"
             placeholder="Doe"
-            className="w-full bg-gray-50 border-gray-200 focus:border-[#1E4ED8] focus:ring-[#1E4ED8]"
+            className="w-full bg-gray-50 border-gray-200 focus:border-brand-leaf focus:ring-brand-leaf"
             required
             disabled={status === "submitting"}
           />
@@ -136,7 +136,7 @@ export function ContactForm() {
           name="email"
           type="email"
           placeholder="john@example.com"
-          className="w-full bg-gray-50 border-gray-200 focus:border-[#1E4ED8] focus:ring-[#1E4ED8]"
+          className="w-full bg-gray-50 border-gray-200 focus:border-brand-leaf focus:ring-brand-leaf"
           required
           disabled={status === "submitting"}
         />
@@ -151,7 +151,7 @@ export function ContactForm() {
           name="phone"
           type="tel"
           placeholder="+91 98765 43210"
-          className="w-full bg-gray-50 border-gray-200 focus:border-[#1E4ED8] focus:ring-[#1E4ED8]"
+          className="w-full bg-gray-50 border-gray-200 focus:border-brand-leaf focus:ring-brand-leaf"
           disabled={status === "submitting"}
         />
       </div>
@@ -165,7 +165,7 @@ export function ContactForm() {
           name="clinicName"
           type="text"
           placeholder="Your Dental Clinic"
-          className="w-full bg-gray-50 border-gray-200 focus:border-[#1E4ED8] focus:ring-[#1E4ED8]"
+          className="w-full bg-gray-50 border-gray-200 focus:border-brand-leaf focus:ring-brand-leaf"
           disabled={status === "submitting"}
         />
       </div>
@@ -181,7 +181,7 @@ export function ContactForm() {
           defaultValue={CONTACT_INTENT_MESSAGES[intent]}
           placeholder="Tell us about your clinic and what you're looking for..."
           rows={6}
-          className="w-full bg-gray-50 border-gray-200 focus:border-[#1E4ED8] focus:ring-[#1E4ED8]"
+          className="w-full bg-gray-50 border-gray-200 focus:border-brand-leaf focus:ring-brand-leaf"
           required
           disabled={status === "submitting"}
         />
@@ -195,7 +195,7 @@ export function ContactForm() {
 
       <Button
         type="submit"
-        className="w-full bg-[#1E4ED8] hover:bg-[#1a42b8] text-white py-6 text-lg"
+        className="w-full bg-brand-leaf hover:bg-brand-leaf/90 text-white py-6 text-lg rounded-2xl"
         disabled={status === "submitting"}
       >
         {status === "submitting" ? "Sending..." : "Send Message"}
@@ -203,7 +203,7 @@ export function ContactForm() {
 
       <p className="text-sm text-gray-500 text-center">
         By submitting this form, you agree to our{" "}
-        <Link href="/privacy" className="text-[#1E4ED8] hover:underline">
+        <Link href="/privacy" className="text-brand-leaf hover:underline">
           Privacy Policy
         </Link>
         .

@@ -88,7 +88,7 @@ export default function TermsPage() {
               <h2 className="text-2xl font-semibold text-gray-900 mb-3">Contact</h2>
               <p>
                 Questions about these terms?{" "}
-                <Link href="/contact" className="text-[#1E4ED8] hover:underline">
+                <Link href="/contact" className="text-brand-leaf hover:underline">
                   Contact us
                 </Link>
                 .

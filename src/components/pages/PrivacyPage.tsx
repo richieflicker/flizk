@@ -24,7 +24,7 @@ export default function PrivacyPage() {
           <ul className="space-y-2">
             {SECTIONS.map((section) => (
               <li key={section.id}>
-                <a href={`#${section.id}`} className="text-[#1E4ED8] hover:underline">
+                <a href={`#${section.id}`} className="text-brand-leaf hover:underline">
                   {section.title}
                 </a>
               </li>
@@ -133,7 +133,7 @@ export default function PrivacyPage() {
               <li>telling the clinic reception to turn off WhatsApp notifications</li>
               <li>
                 writing to us at{" "}
-                <a href="mailto:privacy@flizk.com" className="text-[#1E4ED8] hover:underline">
+                <a href="mailto:privacy@flizk.com" className="text-brand-leaf hover:underline">
                   privacy@flizk.com
                 </a>
               </li>
@@ -189,7 +189,7 @@ export default function PrivacyPage() {
             </ul>
             <p className="mb-4">
               To make a request, email{" "}
-              <a href="mailto:privacy@flizk.com" className="text-[#1E4ED8] hover:underline">
+              <a href="mailto:privacy@flizk.com" className="text-brand-leaf hover:underline">
                 privacy@flizk.com
               </a>{" "}
               with the patient&apos;s name, the clinic and the WhatsApp number. We reply within 30
@@ -198,7 +198,7 @@ export default function PrivacyPage() {
             </p>
             <p className="mb-4">
               <strong>Data deletion instructions.</strong> To delete WhatsApp-related data, email{" "}
-              <a href="mailto:privacy@flizk.com" className="text-[#1E4ED8] hover:underline">
+              <a href="mailto:privacy@flizk.com" className="text-brand-leaf hover:underline">
                 privacy@flizk.com
               </a>{" "}
               with the subject &quot;WhatsApp data deletion&quot;. We delete message logs and
@@ -211,7 +211,7 @@ export default function PrivacyPage() {
             </p>
             <p>
               <strong>Contact.</strong> Flizk, Chennai, Tamil Nadu, India ·{" "}
-              <a href="mailto:privacy@flizk.com" className="text-[#1E4ED8] hover:underline">
+              <a href="mailto:privacy@flizk.com" className="text-brand-leaf hover:underline">
                 privacy@flizk.com
               </a>
             </p>
@@ -219,7 +219,7 @@ export default function PrivacyPage() {
 
           <p className="text-sm text-gray-500 border-t border-gray-200 pt-6">
             Questions about this policy?{" "}
-            <Link href="/contact" className="text-[#1E4ED8] hover:underline">
+            <Link href="/contact" className="text-brand-leaf hover:underline">
               Contact us
             </Link>
             .
