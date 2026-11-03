@@ -31,18 +31,14 @@ export default function ContactPage() {
 
       <section className="pt-32 pb-20 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-brand-ink mb-6">Get in Touch</h1>
             <p className="text-xl md:text-2xl text-brand-muted max-w-3xl mx-auto">
               Have questions about DentXOne or Flizk? We&apos;re here to help. Reach out and
               let&apos;s talk about how we can transform your dental practice.
             </p>
           </div>
-        </div>
-      </section>
 
-      <section className="py-16 -mt-16 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {contactMethods.map((method) => {
               const Icon = method.icon;
@@ -82,7 +78,7 @@ export default function ContactPage() {
               <div className="mb-8">
                 <h2 className="text-4xl font-bold text-brand-ink mb-4">Send Us a Message</h2>
                 <p className="text-xl text-brand-muted">
-                  Fill out the form below and we&apos;ll get back to you as soon as possible.
+                  Tell us about your clinic and what you need.
                 </p>
               </div>
               <Suspense fallback={<p className="text-brand-muted">Loading form…</p>}>
@@ -175,7 +171,7 @@ export default function ContactPage() {
                 How quickly will I hear back?
               </h3>
               <p className="text-brand-muted">
-                We typically respond to all inquiries within 24 hours during business days.
+                We usually reply within 1 business day.
               </p>
             </div>
 
