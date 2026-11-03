@@ -1,25 +1,27 @@
 import { Suspense } from "react";
-import { Clock, MessageSquare, Calendar } from "lucide-react";
+import { Clock, Mail, MessageSquare, Calendar } from "lucide-react";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { CTA_PATHS } from "@/lib/cta";
 
 const contactMethods = [
   {
+    icon: Mail,
+    title: "Email Us",
+    detail: "support@flizk.com",
+    detailHref: "mailto:support@flizk.com",
+    description: "We usually reply within 1 business day.",
+    tint: "bg-brand-leaf-tint",
+    iconColor: "text-brand-leaf",
+  },
+  {
     icon: Clock,
     title: "Business Hours",
-    detail: "Mon - Fri: 9 AM - 6 PM",
+    detail: "Mon - Fri: 9 AM - 6 PM IST",
+    detailHref: undefined as string | undefined,
     description: "We're available during business hours to help you.",
     tint: "bg-brand-teal-tint",
     iconColor: "text-brand-teal",
-  },
-  {
-    icon: MessageSquare,
-    title: "Send a Message",
-    detail: "Use the contact form",
-    description: "Tell us about your clinic and we'll get back to you soon.",
-    tint: "bg-brand-leaf-tint",
-    iconColor: "text-brand-leaf",
   },
 ];
 
@@ -55,7 +57,16 @@ export default function ContactPage() {
                     <Icon className={`w-6 h-6 ${method.iconColor}`} />
                   </div>
                   <h3 className="text-lg font-semibold text-brand-ink mb-2">{method.title}</h3>
-                  <p className="text-brand-leaf font-medium mb-2">{method.detail}</p>
+                  {method.detailHref ? (
+                    <a
+                      href={method.detailHref}
+                      className="text-brand-leaf font-medium mb-2 inline-block hover:underline"
+                    >
+                      {method.detail}
+                    </a>
+                  ) : (
+                    <p className="text-brand-leaf font-medium mb-2">{method.detail}</p>
+                  )}
                   <p className="text-sm text-brand-muted">{method.description}</p>
                 </div>
               );
@@ -146,18 +157,6 @@ export default function ContactPage() {
                   </Link>
                 </div>
               </div>
-
-              <div className="bg-gradient-to-br from-brand-leaf to-brand-teal rounded-[20px] p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">Business Hours</h3>
-                <div className="flex items-start space-x-3">
-                  <Clock className="w-5 h-5 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-medium">When we&apos;re available</p>
-                    <p className="text-white/80 text-sm">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-white/80 text-sm">Saturday - Sunday: Closed</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -198,7 +197,12 @@ export default function ContactPage() {
                 How do I get support?
               </h3>
               <p className="text-brand-muted">
-                Use the contact form on this page and we&apos;ll help you get started with DentXOne.
+                Email{" "}
+                <a href="mailto:support@flizk.com" className="text-brand-leaf hover:underline">
+                  support@flizk.com
+                </a>{" "}
+                for the fastest response, or fill out the form on this page and we&apos;ll follow
+                up within one business day.
               </p>
             </div>
           </div>
