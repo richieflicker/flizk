@@ -96,25 +96,23 @@ export default function WhatsAppRemindersPage() {
       <JsonLd id="whatsapp-software" data={softwareSchema} />
       <JsonLd id="whatsapp-faq" data={faqSchema} />
 
-      <section className="relative bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6] pt-32 pb-20 overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+      <section className="relative bg-brand-surface pt-32 pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-            <MessageSquare className="w-4 h-4 text-white" />
-            <span className="text-white text-sm">WhatsApp for dental clinics</span>
+          <div className="inline-flex items-center space-x-2 bg-brand-leaf-tint px-4 py-2 rounded-full mb-6">
+            <MessageSquare className="w-4 h-4 text-brand-leaf" />
+            <span className="text-brand-ink text-sm">WhatsApp for dental clinics</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-brand-ink mb-6 leading-tight">
             WhatsApp Appointment Reminders for Dental Clinics
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-10">
+          <p className="text-xl md:text-2xl text-brand-muted max-w-3xl mx-auto mb-10">
             DentXOne helps Indian dental clinics cut no-shows with automated WhatsApp reminders —
             built for practices in Chennai, Tamil Nadu, and across India.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <CTAButton
               href={CTA_PATHS.trial}
-              className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg"
+              className="bg-brand-leaf hover:bg-brand-leaf/90 text-white px-8 py-6 text-lg rounded-2xl shadow-[var(--shadow-soft)]"
             >
               Start Free Trial
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -122,7 +120,7 @@ export default function WhatsAppRemindersPage() {
             <CTAButton
               href="/dental-clinic-software-chennai"
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
+              className="bg-white border-0 rounded-2xl hover:text-brand-leaf px-8 py-6 text-lg"
             >
               Dental software in Chennai
             </CTAButton>
@@ -132,10 +130,10 @@ export default function WhatsAppRemindersPage() {
 
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-ink mb-6">
             Why WhatsApp reminders matter for dental clinics
           </h2>
-          <div className="prose prose-lg text-gray-600 space-y-4">
+          <div className="prose prose-lg text-brand-muted space-y-4">
             <p>
               Missed appointments cost clinics time and revenue. SMS and email help, but patients in
               India live on WhatsApp. DentXOne brings WhatsApp appointment reminders into your
@@ -149,21 +147,21 @@ export default function WhatsAppRemindersPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/20">
+      <section className="py-24 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {benefits.map((item) => {
               const Icon = item.icon;
               return (
                 <div
                   key={item.title}
-                  className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+                  className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)]"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6] rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-brand-leaf to-brand-teal rounded-2xl flex items-center justify-center mb-6">
                     <Icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                  <h3 className="text-2xl font-semibold text-brand-ink mb-4">{item.title}</h3>
+                  <p className="text-brand-muted leading-relaxed">{item.description}</p>
                 </div>
               );
             })}
@@ -173,7 +171,7 @@ export default function WhatsAppRemindersPage() {
 
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">More than reminders</h2>
+          <h2 className="text-3xl font-bold text-brand-ink mb-8">More than reminders</h2>
           <ul className="space-y-4">
             {[
               "Full dental clinic management alongside WhatsApp messaging",
@@ -182,40 +180,40 @@ export default function WhatsAppRemindersPage() {
               "Plans for single clinics and multi-location networks",
             ].map((item) => (
               <li key={item} className="flex items-start space-x-3">
-                <Check className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 text-lg">{item}</span>
+                <Check className="w-5 h-5 text-brand-leaf flex-shrink-0 mt-0.5" />
+                <span className="text-brand-ink/80 text-lg">{item}</span>
               </li>
             ))}
           </ul>
           <div className="mt-10 flex flex-wrap gap-4 text-sm">
-            <Link href="/products/dentxone" className="text-[#1E4ED8] hover:underline">
+            <Link href="/products/dentxone" className="text-brand-leaf hover:underline">
               Explore DentXOne features →
             </Link>
-            <Link href="/dental-clinic-software-chennai" className="text-[#1E4ED8] hover:underline">
+            <Link href="/dental-clinic-software-chennai" className="text-brand-leaf hover:underline">
               Dental clinic software Chennai →
             </Link>
-            <Link href="/pricing" className="text-[#1E4ED8] hover:underline">
+            <Link href="/pricing" className="text-brand-leaf hover:underline">
               View plans →
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50/20">
+      <section className="py-24 bg-brand-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Frequently asked questions</h2>
+          <h2 className="text-3xl font-bold text-brand-ink mb-10 text-center">Frequently asked questions</h2>
           <div className="space-y-6">
             {faqs.map((faq) => (
-              <div key={faq.question} className="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{faq.question}</h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+              <div key={faq.question} className="bg-white rounded-[20px] p-8 shadow-[var(--shadow-soft)]">
+                <h3 className="text-xl font-semibold text-brand-ink mb-4">{faq.question}</h3>
+                <p className="text-brand-muted leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-br from-[#1E4ED8] to-[#14B8A6]">
+      <section className="py-24 bg-gradient-to-br from-brand-leaf to-brand-teal">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Start reducing no-shows with WhatsApp
@@ -225,7 +223,7 @@ export default function WhatsAppRemindersPage() {
           </p>
           <CTAButton
             href={CTA_PATHS.contact}
-            className="bg-white text-[#1E4ED8] hover:bg-gray-100 px-8 py-6 text-lg"
+            className="bg-white text-brand-leaf hover:bg-gray-100 px-8 py-6 text-lg rounded-2xl"
           >
             Contact Us
             <ArrowRight className="ml-2 w-5 h-5" />

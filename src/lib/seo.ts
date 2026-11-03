@@ -57,8 +57,9 @@ export const PAGE_SEO = {
     path: "/privacy",
   },
   terms: {
-    title: "Terms of Service | Flizk",
-    description: "Terms of service for using the Flizk website and DentXOne marketing information.",
+    title: "Terms of Service | Flizk DentXOne",
+    description:
+      "Terms of service for DentXOne by Flizk, covering the service, WhatsApp messaging, clinic responsibilities, accounts, fees and liability.",
     path: "/terms",
   },
 } as const satisfies Record<string, PageSeo>;
