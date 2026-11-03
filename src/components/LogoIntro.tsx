@@ -267,7 +267,10 @@ export function LogoIntro() {
       scale: 0.78,
       rotate: -6,
       transformOrigin: "50% 50%",
-      zIndex: 60,
+      // above the overlay (z-index 100), not below it — otherwise the clone sits fully opaque
+      // underneath a still-fading white overlay for most of a second, reading as the logo being
+      // veiled by leftover whiteness instead of landing cleanly
+      zIndex: 110,
     });
     gsap.set(cloneSvg, { width: "100%", height: "auto", display: "block" });
 
