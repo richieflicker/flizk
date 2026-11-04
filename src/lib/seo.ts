@@ -98,6 +98,18 @@ export const PAGE_SEO = {
       "Write, amend and print dental prescriptions from the visit, with a drug catalogue, free-text medicines and allergy warnings. See DentXOne.",
     path: "/features/digital-prescriptions",
   },
+  guides: {
+    title: "Guides for Dental Clinics in India | Flizk",
+    description:
+      "Practical guides for dental clinic owners in India on reducing no-shows, running the front desk and getting more from clinic software.",
+    path: "/guides",
+  },
+  guideNoShows: {
+    title: "How to Reduce Dental No-Shows in India (Guide) | Flizk",
+    description:
+      "A practical guide for Indian dental clinics: what counts as a no-show, what research says about reminders, and a step-by-step plan using WhatsApp.",
+    path: "/guides/reduce-dental-no-shows-india",
+  },
   about: {
     title: "About Flizk – Healthcare Technology Company",
     description:
