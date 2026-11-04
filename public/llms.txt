@@ -18,6 +18,10 @@
 - [Role management](https://flizk.com/features/role-management): Permission matrix for tenant admin, clinic admin, doctor, reception and accountant roles, with per-clinic overrides.
 - [Pricing](https://flizk.com/pricing): DentXOne plans; contact Flizk for a demo or a custom quote.
 
+## Guides
+
+- [How to reduce dental no-shows in India](https://flizk.com/guides/reduce-dental-no-shows-india): What counts as a no-show, what research says about reminders, and a step-by-step plan for Indian clinics using WhatsApp and a live queue.
+
 ## Company
 
 - [About Flizk](https://flizk.com/about): Mission, vision and story.
