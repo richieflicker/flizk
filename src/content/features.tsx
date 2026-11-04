@@ -46,7 +46,7 @@ export const FEATURES = {
       {
         title: "Token numbers for every patient",
         description:
-          "Each patient in the queue gets a token number shown with the clinic's display code, so reception and patients can refer to the same number.",
+          "Each patient in the queue gets a token number, shown with a display code, so reception and patients can refer to the same number.",
       },
       {
         title: "Live updates for reception and doctors",
