@@ -32,6 +32,30 @@ export const PAGE_SEO = {
       "DentXOne is dental clinic management software for Chennai and Tamil Nadu practices: WhatsApp reminders, patient records and billing in one platform.",
     path: "/dental-clinic-software-chennai",
   },
+  cityMadurai: {
+    title: "Dental Clinic Software Madurai – DentXOne | Flizk",
+    description:
+      "DentXOne is cloud dental clinic software for Madurai clinics: live patient queue, dental charting, billing and WhatsApp appointment reminders.",
+    path: "/dental-clinic-software-madurai",
+  },
+  cityCoimbatore: {
+    title: "Dental Clinic Software Coimbatore – DentXOne | Flizk",
+    description:
+      "DentXOne is cloud dental clinic software for Coimbatore practices: charting, lab work tracking, staff roles, billing and WhatsApp reminders.",
+    path: "/dental-clinic-software-coimbatore",
+  },
+  cityVirudhunagar: {
+    title: "Dental Clinic Software Virudhunagar – DentXOne | Flizk",
+    description:
+      "Simple cloud dental clinic software for Virudhunagar district clinics: patient records, queue, billing and WhatsApp appointment reminders.",
+    path: "/dental-clinic-software-virudhunagar",
+  },
+  cityKanyakumari: {
+    title: "Dental Clinic Software Kanyakumari – DentXOne | Flizk",
+    description:
+      "DentXOne is cloud dental clinic software for Kanyakumari district clinics and branches: charting, billing, roles and WhatsApp reminders.",
+    path: "/dental-clinic-software-kanyakumari",
+  },
   whatsappReminders: {
     title: "WhatsApp Appointment Reminders for Dental Clinics | DentXOne",
     description:

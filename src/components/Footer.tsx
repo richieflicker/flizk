@@ -87,6 +87,38 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/dental-clinic-software-madurai"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Dental Software Madurai
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dental-clinic-software-coimbatore"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Dental Software Coimbatore
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dental-clinic-software-virudhunagar"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Dental Software Virudhunagar
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dental-clinic-software-kanyakumari"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Dental Software Kanyakumari
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/whatsapp-appointment-reminders"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
