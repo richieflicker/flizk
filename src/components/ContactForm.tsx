@@ -18,7 +18,7 @@ const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID
 const INTENT_LABELS: Record<ContactIntent, string> = {
   demo: "Book a Demo",
   trial: "Start Free Trial",
-  enterprise: "Enterprise / Sales Inquiry",
+  enterprise: "Network plan / Sales Inquiry",
   general: "General Inquiry",
 };
 
