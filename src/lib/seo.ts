@@ -92,6 +92,12 @@ export const PAGE_SEO = {
       "Control what doctors, reception, accountants and admins can see and do with DentXOne role management and per-clinic permission overrides.",
     path: "/features/role-management",
   },
+  featurePrescriptions: {
+    title: "Digital Prescription Software for Dentists | DentXOne",
+    description:
+      "Write, amend and print dental prescriptions from the visit, with a drug catalogue, free-text medicines and allergy warnings. See DentXOne.",
+    path: "/features/digital-prescriptions",
+  },
   about: {
     title: "About Flizk – Healthcare Technology Company",
     description:

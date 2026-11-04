@@ -36,6 +36,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/features/digital-prescriptions" className="text-gray-400 hover:text-white transition-colors">
+                  Prescriptions
+                </Link>
+              </li>
+              <li>
                 <Link href="/features/multi-clinic-management" className="text-gray-400 hover:text-white transition-colors">
                   Multi-Clinic
                 </Link>
