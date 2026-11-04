@@ -19,6 +19,10 @@
 - [Digital prescriptions](https://flizk.com/features/digital-prescriptions): Write, amend and print prescriptions from the visit, with a drug catalogue, free-text medicines and allergy warnings.
 - [Pricing](https://flizk.com/pricing): DentXOne plans; contact Flizk for a demo or a custom quote.
 
+## Guides
+
+- [How to reduce dental no-shows in India](https://flizk.com/guides/reduce-dental-no-shows-india): What counts as a no-show, what research says about reminders, and a step-by-step plan for Indian clinics using WhatsApp and a live queue.
+
 ## Company
 
 - [About Flizk](https://flizk.com/about): Mission, vision and story.
