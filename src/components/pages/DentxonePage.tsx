@@ -116,6 +116,7 @@ const softwareSchema = {
     "Appointment scheduling with WhatsApp reminders",
     "Queue-based appointments with token numbers",
     "Interactive FDI dental chart",
+    "Digital prescriptions with allergy warnings",
     "Multi-clinic management",
     "Dental lab work tracking",
     "Role-based staff permissions",

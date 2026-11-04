@@ -16,6 +16,7 @@
 - [Multi-clinic management](https://flizk.com/features/multi-clinic-management): Run several clinic branches from one account with a clinic switcher, per-clinic schedules and an all-clinics rollup (Network plan).
 - [Lab work tracking](https://flizk.com/features/lab-work-tracking): Track dental lab cases from dispatch to fitting, with vendors, remakes and payables.
 - [Role management](https://flizk.com/features/role-management): Permission matrix for tenant admin, clinic admin, doctor, reception and accountant roles, with per-clinic overrides.
+- [Digital prescriptions](https://flizk.com/features/digital-prescriptions): Write, amend and print prescriptions from the visit, with a drug catalogue, free-text medicines and allergy warnings.
 - [Pricing](https://flizk.com/pricing): DentXOne plans; contact Flizk for a demo or a custom quote.
 
 ## Company

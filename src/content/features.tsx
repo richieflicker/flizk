@@ -2,6 +2,7 @@ import {
   Building2,
   ClipboardList,
   FlaskConical,
+  Pill,
   ListOrdered,
   ShieldCheck,
   type LucideIcon,
@@ -174,7 +175,7 @@ export const FEATURES = {
       },
     ],
     ctaTitle: "See the DentXOne dental chart in a demo",
-    related: ["lab-work-tracking", "queue-based-appointments"],
+    related: ["lab-work-tracking", "digital-prescriptions", "queue-based-appointments"],
   },
 
   "multi-clinic-management": {
@@ -381,6 +382,81 @@ export const FEATURES = {
     ],
     ctaTitle: "See DentXOne role management in a demo",
     related: ["multi-clinic-management", "lab-work-tracking"],
+  },
+
+  "digital-prescriptions": {
+    seoKey: "featurePrescriptions",
+    name: "Digital prescriptions",
+    badge: "Clinical",
+    icon: Pill,
+    h1: "Digital prescriptions for dental clinics",
+    intro:
+      "Write the prescription during the visit, get a warning if a medicine may conflict with a recorded allergy, and print a clean prescription with your clinic and doctor details.",
+    overviewTitle: "Prescribe from the patient's visit",
+    overview: [
+      "The prescription lives inside the clinical workspace for the appointment, next to the chart and notes. The doctor adds each medicine with its dosage, frequency, duration and instructions, and the prescription is saved to the patient's record.",
+      "Because prescriptions are stored, a doctor can amend one if needed and look back at what a patient was prescribed before, instead of searching through paper copies.",
+    ],
+    highlights: [
+      {
+        title: "Written inside the visit",
+        description:
+          "Create and amend the prescription from the patient's appointment, without switching to another tool.",
+      },
+      {
+        title: "Drug catalogue or free text",
+        description:
+          "Pick medicines from a drug catalogue to save typing, or type any medicine that is not in the list.",
+      },
+      {
+        title: "Dosage, frequency, duration and instructions",
+        description:
+          "Each medicine has its own dosage, frequency, duration and instructions, so the patient gets clear directions.",
+      },
+      {
+        title: "Allergy warnings",
+        description:
+          "If a medicine may relate to an allergy recorded in the patient's history, the doctor sees a warning to review before prescribing. It supports clinical judgement; it does not replace it.",
+      },
+      {
+        title: "Print-ready prescription",
+        description:
+          "The printout shows the clinic name, address and phone, the patient's name, age and gender, the doctor's name and licence number, a medicines table and a signature line.",
+      },
+      {
+        title: "Amend and see earlier prescriptions",
+        description:
+          "Amend a prescription when something changes, and view the patient's earlier prescriptions from the same screen.",
+      },
+    ],
+    checklistTitle: "What you can do",
+    checklist: [
+      "Create and amend prescriptions from the visit",
+      "Choose medicines from a catalogue or enter them freely",
+      "Record dosage, frequency, duration and instructions",
+      "See allergy warnings from the patient's history",
+      "Print with clinic and doctor details",
+      "Review earlier prescriptions",
+    ],
+    faqs: [
+      {
+        question: "Can doctors prescribe medicines that are not in the catalogue?",
+        answer:
+          "Yes. A doctor can pick from the drug catalogue or type a medicine in manually, so the catalogue never limits what can be prescribed.",
+      },
+      {
+        question: "Does DentXOne warn about allergies when prescribing?",
+        answer:
+          "Yes. If a medicine may relate to an allergy recorded in the patient's medical history, DentXOne shows a warning for the doctor to review. The doctor makes the final decision.",
+      },
+      {
+        question: "Can I print a prescription from DentXOne?",
+        answer:
+          "Yes. The printed prescription includes the clinic's details, the patient's name, age and gender, the doctor's name and licence number from their profile, the medicines, and a signature line.",
+      },
+    ],
+    ctaTitle: "See DentXOne prescriptions in a demo",
+    related: ["dental-charting", "role-management"],
   },
 } satisfies Record<string, FeatureContent>;
 
