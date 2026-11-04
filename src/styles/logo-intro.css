@@ -1,0 +1,16 @@
+/* Page-load logo intro (home page only) — see src/components/LogoIntro.tsx */
+
+body.flizk-intro-locked {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* real header logo stays hidden only while the intro is actively driving its own clone */
+html.flizk-intro-active #header-logo-slot img {
+  opacity: 0;
+}
+
+/* hero content revealed by LogoIntro's animateHeroIn() once the page is interactive */
+[data-intro-reveal] {
+  opacity: 0;
+}
