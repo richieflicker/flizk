@@ -26,8 +26,28 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/products/dentxone" className="text-gray-400 hover:text-white transition-colors">
-                  Features
+                <Link href="/features/queue-based-appointments" className="text-gray-400 hover:text-white transition-colors">
+                  Queue Appointments
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/dental-charting" className="text-gray-400 hover:text-white transition-colors">
+                  Dental Charting
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/multi-clinic-management" className="text-gray-400 hover:text-white transition-colors">
+                  Multi-Clinic
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/lab-work-tracking" className="text-gray-400 hover:text-white transition-colors">
+                  Lab Work Tracking
+                </Link>
+              </li>
+              <li>
+                <Link href="/features/role-management" className="text-gray-400 hover:text-white transition-colors">
+                  Role Management
                 </Link>
               </li>
               <li>

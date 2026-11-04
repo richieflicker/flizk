@@ -7,6 +7,11 @@
 - [DentXOne](https://flizk.com/products/dentxone): Overview of the dental clinic management platform — patients, appointments, treatments, billing and WhatsApp reminders.
 - [Dental clinic software in Chennai](https://flizk.com/dental-clinic-software-chennai): DentXOne for Chennai and Tamil Nadu dental clinics.
 - [WhatsApp appointment reminders](https://flizk.com/whatsapp-appointment-reminders): Appointment booking and automated WhatsApp reminders to reduce no-shows.
+- [Queue-based appointments](https://flizk.com/features/queue-based-appointments): Token-numbered live patient queue per specialty, check-in, doctor claim, emergency flag and follow-ups.
+- [Dental charting](https://flizk.com/features/dental-charting): Interactive FDI tooth chart with per-tooth diagnosis, treatment and surfaces, for adult, mixed and children's dentition.
+- [Multi-clinic management](https://flizk.com/features/multi-clinic-management): Run several clinic branches from one account with a clinic switcher, per-clinic schedules and an all-clinics rollup (Enterprise plan).
+- [Lab work tracking](https://flizk.com/features/lab-work-tracking): Track dental lab cases from dispatch to fitting, with vendors, remakes and payables.
+- [Role management](https://flizk.com/features/role-management): Permission matrix for tenant admin, clinic admin, doctor, reception and accountant roles, with per-clinic overrides.
 - [Pricing](https://flizk.com/pricing): DentXOne plans; contact Flizk for a demo or a custom quote.
 
 ## Company

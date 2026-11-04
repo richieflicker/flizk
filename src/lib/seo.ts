@@ -38,6 +38,36 @@ export const PAGE_SEO = {
       "Cut no-shows with DentXOne WhatsApp appointment booking and automated reminders, built for dental clinics in Chennai, Tamil Nadu and across India.",
     path: "/whatsapp-appointment-reminders",
   },
+  featureQueue: {
+    title: "Queue-Based Dental Appointment Software | DentXOne",
+    description:
+      "Token-numbered patient queues for dental clinics with live updates, check-in, emergency flags and follow-ups. See how DentXOne runs the clinic day.",
+    path: "/features/queue-based-appointments",
+  },
+  featureCharting: {
+    title: "Dental Charting Software with FDI Tooth Chart | DentXOne",
+    description:
+      "Interactive FDI tooth chart for dental clinics: record diagnosis, treatment and surfaces per tooth for adult, mixed and children's dentition.",
+    path: "/features/dental-charting",
+  },
+  featureMultiClinic: {
+    title: "Multi-Clinic Dental Software for Branches | DentXOne",
+    description:
+      "Run several dental clinic branches from one DentXOne account: switch between clinics, set schedules per clinic and see a rollup across locations.",
+    path: "/features/multi-clinic-management",
+  },
+  featureLabWork: {
+    title: "Dental Lab Work Tracking Software | DentXOne",
+    description:
+      "Track crowns and other dental lab cases from dispatch to fitting: vendor assignment, a status board, remakes and lab payables in DentXOne.",
+    path: "/features/lab-work-tracking",
+  },
+  featureRoles: {
+    title: "Dental Clinic Staff Roles & Permissions | DentXOne",
+    description:
+      "Control what doctors, reception, accountants and admins can see and do with DentXOne role management and per-clinic permission overrides.",
+    path: "/features/role-management",
+  },
   about: {
     title: "About Flizk – Healthcare Technology Company",
     description:
