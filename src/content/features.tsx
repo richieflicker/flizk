@@ -188,7 +188,7 @@ export const FEATURES = {
     overviewTitle: "One account, several clinics",
     overview: [
       "Dental groups and growing practices need each branch to work on its own and still be managed as one business. DentXOne lets staff work inside their clinic while owners and managers see across the group.",
-      "Multi-clinic management is part of the Enterprise plan on the pricing page. Contact Flizk to talk through your setup.",
+      "Multi-clinic management is part of the Network plan on the pricing page. Contact Flizk to talk through your setup.",
     ],
     highlights: [
       {
@@ -229,7 +229,7 @@ export const FEATURES = {
       {
         question: "Which DentXOne plan supports multiple clinics?",
         answer:
-          "Multi-clinic management is listed on the Enterprise plan. Contact Flizk for a quote based on your number of clinics.",
+          "Multi-clinic management is listed on the Network plan. Contact Flizk for a quote based on your number of clinics.",
       },
       {
         question: "Can staff only see their own clinic?",

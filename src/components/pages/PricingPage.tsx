@@ -5,7 +5,7 @@ import { Check, Sparkles, HelpCircle } from "lucide-react";
 
 const plans = [
   {
-    name: "Starter",
+    name: "Solo",
     description: "Perfect for small dental clinics getting started",
     features: [
       "Up to 100 patients",
@@ -22,7 +22,7 @@ const plans = [
     badge: null as string | null,
   },
   {
-    name: "Professional",
+    name: "Clinic",
     description: "For growing practices with advanced needs",
     features: [
       "Unlimited patients",
@@ -42,7 +42,7 @@ const plans = [
     badge: "Most Popular",
   },
   {
-    name: "Enterprise",
+    name: "Network",
     description: "For multi-clinic networks and large practices",
     features: [
       "Unlimited patients",
@@ -59,7 +59,7 @@ const plans = [
       "SLA guarantee",
     ],
     popular: false,
-    badge: "Enterprise",
+    badge: "Multi-clinic",
   },
 ];
 
@@ -86,7 +86,7 @@ const faqs = [
   {
     question: "What happens if I exceed my patient limit?",
     answer:
-      "For the Starter plan, we'll notify you when you're approaching the limit and help you upgrade to Professional for unlimited patients.",
+      "For the Solo plan, we'll notify you when you're approaching the limit and help you upgrade to Clinic for unlimited patients.",
   },
   {
     question: "Do you offer discounts for annual billing?",
@@ -216,11 +216,11 @@ export default function PricingPage() {
               <thead>
                 <tr className="border-b-2 border-brand-surface">
                   <th className="text-left py-4 px-6 text-brand-ink font-semibold">Feature</th>
-                  <th className="text-center py-4 px-6 text-brand-ink font-semibold">Starter</th>
+                  <th className="text-center py-4 px-6 text-brand-ink font-semibold">Solo</th>
                   <th className="text-center py-4 px-6 text-brand-leaf font-semibold bg-brand-leaf-tint">
-                    Professional
+                    Clinic
                   </th>
-                  <th className="text-center py-4 px-6 text-brand-ink font-semibold">Enterprise</th>
+                  <th className="text-center py-4 px-6 text-brand-ink font-semibold">Network</th>
                 </tr>
               </thead>
               <tbody>

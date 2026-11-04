@@ -72,7 +72,7 @@ const faqs = [
   {
     question: "Is DentXOne suitable for multi-clinic setups?",
     answer:
-      "Yes! DentXOne's Enterprise plan is specifically designed for multi-clinic networks. You can manage multiple locations from a single dashboard, with centralized reporting, billing, and patient management across all branches.",
+      "Yes! DentXOne's Network plan is specifically designed for multi-clinic networks. You can manage multiple locations from a single dashboard, with centralized reporting, billing, and patient management across all branches.",
   },
   {
     question: "Can DentXOne manage patient records securely?",
@@ -87,7 +87,7 @@ const faqs = [
   {
     question: "What kind of support do you provide?",
     answer:
-      "We offer comprehensive support including email support for all plans, priority support for Professional plans, and 24/7 phone support for Enterprise customers. We also provide onboarding assistance and training resources.",
+      "We offer comprehensive support including email support for all plans, priority support for Clinic plans, and 24/7 phone support for Network customers. We also provide onboarding assistance and training resources.",
   },
 ];
 

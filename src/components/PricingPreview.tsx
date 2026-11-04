@@ -4,7 +4,7 @@ import { CTA_PATHS } from "@/lib/cta";
 
 const plans = [
   {
-    name: "Starter",
+    name: "Solo",
     description: "Perfect for small dental clinics getting started",
     features: [
       "Up to 100 patients",
@@ -17,7 +17,7 @@ const plans = [
     popular: false,
   },
   {
-    name: "Professional",
+    name: "Clinic",
     description: "For growing practices with advanced needs",
     features: [
       "Unlimited patients",
@@ -33,7 +33,7 @@ const plans = [
     popular: true,
   },
   {
-    name: "Enterprise",
+    name: "Network",
     description: "For multi-clinic networks and large practices",
     features: [
       "Unlimited patients",
