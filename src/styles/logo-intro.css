@@ -10,7 +10,9 @@ html.flizk-intro-active #header-logo-slot img {
   opacity: 0;
 }
 
-/* hero content revealed by LogoIntro's animateHeroIn() once the page is interactive */
-[data-intro-reveal] {
+/* Hero content is hidden ONLY while the intro is pending — the class is added by the inline
+   boot script in layout.tsx (first visit, motion allowed, not a crawler) and removed by
+   LogoIntro or its failsafe timer. Without the class the hero is visible from first paint. */
+html.flizk-intro-pending [data-intro-reveal] {
   opacity: 0;
 }
