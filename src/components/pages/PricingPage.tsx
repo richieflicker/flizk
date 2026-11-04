@@ -1,3 +1,4 @@
+import { JsonLd } from "@/components/JsonLd";
 import { CTAButton } from "@/components/CTAButton";
 import { CTA_PATHS } from "@/lib/cta";
 import { Check, Sparkles, HelpCircle } from "lucide-react";
@@ -94,9 +95,20 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
 export default function PricingPage() {
   return (
     <>
+      <JsonLd id="pricing-faq" data={faqSchema} />
 
       <section className="pt-32 pb-20 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

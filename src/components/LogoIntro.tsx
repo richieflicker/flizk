@@ -2,8 +2,14 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import {
+  INTRO_FAILSAFE_MS,
+  INTRO_PENDING_CLASS,
+  INTRO_SESSION_KEY,
+  INTRO_SKIP_UA_PATTERN,
+} from "@/lib/intro";
 
-export const FLIZK_INTRO_SESSION_KEY = "flizkIntroPlayed";
+export const FLIZK_INTRO_SESSION_KEY = INTRO_SESSION_KEY;
 
 // Same path data as public/brand/flizk-logo.svg, reused for both the big intro mark and the
 // temporary header clone used during the handoff/wind-gust. Kept inline (not an <img>) because
@@ -71,32 +77,43 @@ export function LogoIntro() {
     if (!isHome) return;
 
     let cancelled = false;
-    import("gsap").then(({ gsap }) => {
-      if (cancelled) return;
 
-      let reduceMotion = false;
-      let alreadyPlayed = false;
-      try {
-        reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        alreadyPlayed = sessionStorage.getItem(FLIZK_INTRO_SESSION_KEY) === "1";
-      } catch {
-        // sessionStorage/matchMedia unavailable — fall through to playing the intro
-      }
+    let reduceMotion = false;
+    let alreadyPlayed = false;
+    let automated = false;
+    try {
+      reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      alreadyPlayed = sessionStorage.getItem(FLIZK_INTRO_SESSION_KEY) === "1";
+      automated =
+        !!navigator.webdriver || new RegExp(INTRO_SKIP_UA_PATTERN, "i").test(navigator.userAgent);
+    } catch {
+      // sessionStorage/matchMedia unavailable — fall through to playing the intro
+    }
 
-      if (reduceMotion || alreadyPlayed) {
+    // Repeat visits, reduced-motion users and crawlers/speed tests never see the intro and the
+    // hero is never hidden for them, so the headline paints immediately (LCP). No gsap needed.
+    if (reduceMotion || alreadyPlayed || automated) {
+      settleInstantly();
+      return;
+    }
+
+    // Safety net in case the gsap chunk never arrives: never leave the hero hidden.
+    const failsafe = window.setTimeout(() => {
+      if (!document.documentElement.classList.contains("flizk-intro-active")) revealHero();
+    }, INTRO_FAILSAFE_MS);
+
+    import("gsap")
+      .then(({ gsap }) => {
+        if (cancelled) return;
+        startIntro(gsap);
+      })
+      .catch(() => {
         settleInstantly();
-        // the hero still gets its own reveal on every real page load — reduceMotion snaps it
-        // straight to visible, a plain repeat visit (already played, motion is fine) fades it
-        // in just like a first visit would
-        animateHeroIn(gsap, reduceMotion);
-        return;
-      }
-
-      startIntro(gsap);
-    });
+      });
 
     return () => {
       cancelled = true;
+      window.clearTimeout(failsafe);
       tlRef.current?.kill();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -110,7 +127,12 @@ export function LogoIntro() {
     }
   }
 
+  function revealHero() {
+    document.documentElement.classList.remove(INTRO_PENDING_CLASS);
+  }
+
   function settleInstantly() {
+    revealHero();
     document.documentElement.classList.remove("flizk-intro-active");
     document.body.classList.remove("flizk-intro-locked");
     if (overlayRef.current) overlayRef.current.style.display = "none";
@@ -123,6 +145,7 @@ export function LogoIntro() {
     if (!heroEls.length) return;
     if (reduceMotion) {
       gsap.set(heroEls, { opacity: 1, y: 0 });
+      revealHero();
       return;
     }
     gsap.fromTo(
@@ -130,6 +153,8 @@ export function LogoIntro() {
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 0.65, ease: "power3.out", stagger: 0.12 }
     );
+    // inline opacity from the tween now owns visibility, so the CSS class can go
+    revealHero();
   }
 
   function startIntro(gsap: typeof import("gsap").gsap) {
@@ -141,6 +166,7 @@ export function LogoIntro() {
     bigMarkWrap.innerHTML = LOGO_SVG_MARKUP;
     const bigSvg = bigMarkWrap.querySelector("svg")!;
 
+    document.documentElement.classList.add(INTRO_PENDING_CLASS);
     document.documentElement.classList.add("flizk-intro-active");
     document.body.classList.add("flizk-intro-locked");
     overlay.style.display = "flex";

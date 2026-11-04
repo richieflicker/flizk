@@ -9,39 +9,39 @@ export type PageSeo = {
 
 export const PAGE_SEO = {
   home: {
-    title: "DentXOne – Dental Clinic Management Software for Chennai & Tamil Nadu Clinics | Flizk",
+    title: "DentXOne – Dental Clinic Software for Chennai | Flizk",
     description:
-      "DentXOne by Flizk: WhatsApp-integrated dental practice management software for clinics in Chennai & Tamil Nadu. Patient records, dental charting, appointment booking & automated reminders. Built for Indian dental practices.",
+      "WhatsApp-integrated dental clinic software for Chennai & Tamil Nadu: patient records, dental charting, appointments and automated reminders.",
     path: "/",
   },
   dentxone: {
-    title: "DentXOne – Dental Clinic Management Software for India | Flizk",
+    title: "DentXOne – Dental Clinic Management Software | Flizk",
     description:
-      "DentXOne helps dental practices in Chennai, Tamil Nadu, and across India manage patients, appointments, treatments, billing, and WhatsApp reminders. Cloud-based dental clinic software built for Indian clinics.",
+      "Manage patients, appointments, treatments, billing and WhatsApp reminders in one cloud-based dental clinic software built for Indian clinics.",
     path: "/products/dentxone",
   },
   pricing: {
-    title: "DentXOne Plans – Dental Clinic Software for Chennai & Tamil Nadu | Flizk",
+    title: "DentXOne Pricing – Dental Clinic Software | Flizk",
     description:
-      "Compare DentXOne plans for dental clinics in Chennai and Tamil Nadu. Contact Flizk for a demo or custom quote — WhatsApp reminders, patient records, and practice management included.",
+      "Compare DentXOne plans for dental clinics in Chennai and Tamil Nadu. Contact Flizk for a demo or a custom quote.",
     path: "/pricing",
   },
   chennai: {
-    title: "Dental Clinic Software Chennai – DentXOne by Flizk",
+    title: "Dental Clinic Software Chennai – DentXOne | Flizk",
     description:
-      "DentXOne is dental clinic management software built for Chennai and Tamil Nadu practices. WhatsApp appointment reminders, patient records, billing, and operations in one platform.",
+      "DentXOne is dental clinic management software for Chennai and Tamil Nadu practices: WhatsApp reminders, patient records and billing in one platform.",
     path: "/dental-clinic-software-chennai",
   },
   whatsappReminders: {
     title: "WhatsApp Appointment Reminders for Dental Clinics | DentXOne",
     description:
-      "Reduce no-shows with DentXOne WhatsApp appointment booking and automated reminders for dental clinics in India. Built for Chennai and Tamil Nadu practices.",
+      "Cut no-shows with DentXOne WhatsApp appointment booking and automated reminders, built for dental clinics in Chennai, Tamil Nadu and across India.",
     path: "/whatsapp-appointment-reminders",
   },
   about: {
     title: "About Flizk – Healthcare Technology Company",
     description:
-      "Flizk is a healthcare technology company building software platforms for clinics. Learn about our mission, team, and DentXOne dental clinic software for Chennai & Tamil Nadu.",
+      "Flizk builds software platforms for clinics. Learn about our mission and DentXOne, our dental clinic software for Chennai and Tamil Nadu.",
     path: "/about",
   },
   contact: {
@@ -53,13 +53,13 @@ export const PAGE_SEO = {
   privacy: {
     title: "Privacy Policy | Flizk DentXOne",
     description:
-      "How DentXOne by Flizk collects, uses, shares and protects patient data for WhatsApp appointment messaging, including consent, opt-out and data deletion.",
+      "How DentXOne by Flizk collects, uses and protects patient data for WhatsApp appointment messaging, including consent, opt-out and deletion.",
     path: "/privacy",
   },
   terms: {
     title: "Terms of Service | Flizk DentXOne",
     description:
-      "Terms of service for DentXOne by Flizk, covering the service, WhatsApp messaging, clinic responsibilities, accounts, fees and liability.",
+      "Terms of service for DentXOne by Flizk: the service, WhatsApp messaging, clinic responsibilities, accounts, fees and liability.",
     path: "/terms",
   },
 } as const satisfies Record<string, PageSeo>;

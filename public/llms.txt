@@ -1,0 +1,20 @@
+# Flizk
+
+> Flizk is a healthcare technology company that builds software platforms for clinics. Its product DentXOne is cloud-based dental clinic management software for dental practices in Chennai, Tamil Nadu and across India, with patient records, dental charting, appointments, billing and WhatsApp appointment reminders.
+
+## Product
+
+- [DentXOne](https://flizk.com/products/dentxone): Overview of the dental clinic management platform — patients, appointments, treatments, billing and WhatsApp reminders.
+- [Dental clinic software in Chennai](https://flizk.com/dental-clinic-software-chennai): DentXOne for Chennai and Tamil Nadu dental clinics.
+- [WhatsApp appointment reminders](https://flizk.com/whatsapp-appointment-reminders): Appointment booking and automated WhatsApp reminders to reduce no-shows.
+- [Pricing](https://flizk.com/pricing): DentXOne plans; contact Flizk for a demo or a custom quote.
+
+## Company
+
+- [About Flizk](https://flizk.com/about): Mission, vision and story.
+- [Contact](https://flizk.com/contact): Book a DentXOne demo or ask a question.
+
+## Policies
+
+- [Privacy policy](https://flizk.com/privacy): How patient data is handled for WhatsApp appointment messaging, including consent, opt-out and deletion.
+- [Terms of service](https://flizk.com/terms): Service terms, WhatsApp messaging, clinic responsibilities, fees and liability.
