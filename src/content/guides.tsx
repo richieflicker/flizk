@@ -6,6 +6,7 @@ export type GuideSection = {
   paragraphs?: string[];
   bullets?: string[];
   steps?: { title: string; text: string }[];
+  table?: { headers: string[]; rows: string[][] };
 };
 
 export type GuideContent = {
@@ -160,6 +161,169 @@ export const GUIDES = {
         title: "Top 10 Ways To Reduce Dental No Shows After Patients Schedule (DOCS Education)",
         url: "https://www.docseducation.com/node/53377",
         note: "Practical steps including tracking by appointment type and clear cancellation policies.",
+      },
+    ],
+  },
+  "dental-clinic-queue-token-system-india": {
+    seoKey: "guideQueueToken",
+    h1: "Queue and token systems for dental clinics in India: walk-in vs appointment",
+    intro:
+      "Most Indian dental clinics run a mix of booked patients and walk-ins. This guide compares walk-in, appointment and token-queue models, explains how to run a token queue fairly, and shares what the research says about waiting.",
+    answerTitle: "The short answer",
+    answer:
+      "For most Indian clinics, a hybrid works best: take bookings for planned treatments, accept walk-ins into the same queue, and give every patient a token number so everyone can see the order. Write down your rules for emergencies, late arrivals and follow-ups before you need them. One Management Science field study in Indian clinics found that alphanumeric tokens (a letter plus a number) led to lower perceived waiting than plain numbers in most cases. We found no study of token queues in Indian dental clinics specifically, so track your own waiting times.",
+    published: "2026-11-04",
+    updated: "2026-11-04",
+    readingMinutes: 7,
+    sections: [
+      {
+        heading: "Why waiting matters",
+        paragraphs: [
+          "A small cross-sectional study at a dental clinic in Medan, Indonesia (100 follow-up patients, 2026) found that just over half of patients rated the waiting time as poor, and that waiting time was significantly associated with satisfaction. The authors suggest that predicting service time and telling patients what to expect could help. It is a small study from another country, so read it as a pointer, not a benchmark for India.",
+          "The practical lesson is simple: patients judge a clinic by how the wait feels as much as by the treatment, so it is worth managing both the length of the wait and what patients are told about it.",
+        ],
+      },
+      {
+        heading: "Walk-in, appointment or token queue: how they compare",
+        paragraphs: [
+          "These are not exclusive. Many clinics run all three at once. The table shows what each one is good and bad at.",
+        ],
+        table: {
+          headers: ["Model", "Works well when", "Main weakness"],
+          rows: [
+            [
+              "Walk-in only",
+              "Most visits are short, such as checkups, pain or minor problems, and patients live nearby.",
+              "Unpredictable load. Busy hours create crowds and idle gaps appear at other times.",
+            ],
+            [
+              "Appointment only",
+              "Treatments are long and planned, such as root canals, implants and orthodontics.",
+              "Turns away people with sudden pain. Empty slots appear when patients do not show up.",
+            ],
+            [
+              "Token queue (hybrid)",
+              "You have both booked patients and walk-ins and want one visible order.",
+              "Needs clear rules for emergencies and for booked patients, or people feel it is unfair.",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "Separate queues, or one shared queue?",
+        paragraphs: [
+          "A 2023 simulation study of an outpatient clinic registration system (published in IJERPH) compared one shared queue, with priority for patients who had appointments, against separate queues with dedicated staff for walk-ins. In the simulation, splitting the queues did not meaningfully shorten walk-in waits, could lengthen waits for appointment holders, and served fewer patients overall because staff sat idle while others were busy.",
+          "Separate queues helped walk-ins more when walk-in volume was high and fewer booked patients missed their slots. This was a simulation of a registration desk, not a dental clinic, so it supports a cautious conclusion: start with one shared queue and only split it if your own waiting times show a reason to.",
+        ],
+      },
+      {
+        heading: "How a token system works",
+        steps: [
+          {
+            title: "Issue a token at check-in",
+            text: "Every patient gets a token when they arrive or check in, whether they booked or walked in. The token, not the arrival impression, defines the order.",
+          },
+          {
+            title: "Show the queue where patients can see it",
+            text: "Display the current token on a screen or read it out. A visible order is what makes a queue feel fair.",
+          },
+          {
+            title: "Call patients by token",
+            text: "Call by token number so names stay private and the order stays clear, even in a crowded waiting area.",
+          },
+          {
+            title: "Record what happened",
+            text: "Mark each token as seen, cancelled or no-show. Those records are what let you measure waiting later.",
+          },
+        ],
+      },
+      {
+        heading: "Designing the token: letters plus numbers",
+        paragraphs: [
+          "The Management Science study (Rathee and colleagues, 2023) ran field experiments in three clinics in India. It compared numeric tokens with alphanumeric ones. In most cases the alphanumeric tokens led to lower pain perception, lower perceived waiting time and higher satisfaction with the healthcare system.",
+          "The researchers describe this as initial evidence, and the clinics were health clinics in general, not dental practices. Still, it is cheap to apply: use a letter prefix that means something at your clinic, such as a specialty or doctor, followed by the number, for example a prefix for general dentistry or one for orthodontics.",
+        ],
+      },
+      {
+        heading: "Fairness rules to write down",
+        paragraphs: [
+          "Most arguments in a waiting room are about fairness. Decide the rules in advance, post them at reception, and apply them the same way to everyone.",
+        ],
+        bullets: [
+          "Emergencies: severe pain, swelling, bleeding or trauma can go ahead of the queue. Mark them as emergencies so the exception is visible and recorded.",
+          "Late arrivals: set a grace period for booked patients. After it, they join the queue at the back rather than taking the doctor's next slot.",
+          "Follow-ups: short follow-ups, such as a dressing check or suture removal, can get their own quick path if the doctor agrees.",
+          "Booked patients: decide whether a booking gives priority, a time window, or only a place in the same queue. Tell patients which one it is.",
+          "Walk-ins when the day is full: say so politely at the door and offer a booking for another day.",
+        ],
+      },
+      {
+        heading: "Tell patients how long it will take",
+        paragraphs: [
+          "A rough, honest estimate is better than silence. Count how many tokens are ahead of the patient and multiply by your typical visit length for that treatment, then say a range, not a precise time. If the queue runs long, tell people early.",
+          "Be careful with promises. A patient told 20 minutes who waits 50 will be more upset than one told 45 who waits 50.",
+        ],
+      },
+      {
+        heading: "What to measure",
+        bullets: [
+          "Waiting time: from check-in to the patient entering the treatment room, by treatment type.",
+          "No-show and late-cancellation rate each month (see our guide on reducing dental no-shows).",
+          "Share of patients who are walk-ins, bookings and emergencies on each day of the week.",
+          "Longest waits: look at the worst day each month, not only the average.",
+        ],
+      },
+      {
+        heading: "Where DentXOne fits in",
+        paragraphs: [
+          "Full disclosure: Flizk makes DentXOne, so this is our own product. DentXOne keeps a live token-numbered queue for each specialty, shows each patient with a display code and token number, lets staff check patients in, lets a doctor claim or release a patient, and supports an emergency flag. Staff can cancel or mark a no-show, the queue updates live, and booked appointments are available in a calendar and list view with schedule windows.",
+          "We do not claim that DentXOne predicts waiting times, and software will not fix a queue without clear rules. It gives your team one shared, visible order and a record of what happened, so you can apply the rules above and measure the result.",
+        ],
+      },
+    ],
+    relatedFeatures: ["queue-based-appointments", "role-management"],
+    faqs: [
+      {
+        question: "Should a dental clinic take only appointments or allow walk-ins too?",
+        answer:
+          "Most Indian clinics benefit from both. Book planned, longer treatments, and keep room for walk-ins with sudden pain. A single visible queue with token numbers keeps the two groups fair to each other.",
+      },
+      {
+        question: "Why use letters in token numbers?",
+        answer:
+          "A Management Science field study in Indian health clinics found that alphanumeric tokens usually led to lower perceived waiting and higher satisfaction than numeric ones. It was not a dental study, but the change costs nothing.",
+      },
+      {
+        question: "How do we handle emergencies without upsetting other patients?",
+        answer:
+          "Write the rule down, post it at reception, and mark emergencies visibly in the queue. People accept an exception more easily when the rule was clear before the day began.",
+      },
+      {
+        question: "Should booked patients skip the queue?",
+        answer:
+          "That is your call. Some clinics give booked patients a fixed time window, others only guarantee a place in the same queue. Either works if patients know which one applies.",
+      },
+      {
+        question: "Does one shared queue or separate queues work better?",
+        answer:
+          "One simulation of a clinic registration desk found a shared queue with priority for appointments performed about as well for walk-ins and better overall than splitting queues. It was a simulation, not a dental clinic, so check your own waiting times.",
+      },
+    ],
+    sources: [
+      {
+        title: "Alphanumeric vs. Numeric Token Systems and the Healthcare Experience: Field Evidence from Healthcare Delivery in India (Management Science, 2023)",
+        url: "https://doi.org/10.1287/mnsc.2022.4389",
+        note: "Field experiments in three health clinics in India. Not specific to dental clinics.",
+      },
+      {
+        title: "Analysis of the Waiting Time in Clinic Registration of Patients with Appointments and Random Walk-Ins (IJERPH, 2023)",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9915897",
+        note: "Computer simulation of a shared queue versus separate queues.",
+      },
+      {
+        title: "Service time and waiting time as predictors of patient satisfaction at Sozo Dental Clinic, Medan (2026)",
+        url: "https://jurnal.unprimdn.ac.id/index.php/bulkesprima/article/view/8469",
+        note: "Cross-sectional study of 100 follow-up patients in Indonesia.",
       },
     ],
   },
