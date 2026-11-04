@@ -2,7 +2,9 @@ import { CTAButton } from "@/components/CTAButton";
 import { JsonLd } from "@/components/JsonLd";
 import { Logo } from "@/components/Logo";
 import { CTA_PATHS } from "@/lib/cta";
-import {pageUrl} from "@/lib/seo";
+import { PAGE_SEO, pageUrl } from "@/lib/seo";
+import { FEATURES, FEATURE_SLUGS } from "@/content/features";
+import Link from "next/link";
 import { DashboardMockup } from "@/components/DashboardMockup";
 import {
   Users,
@@ -109,6 +111,16 @@ const softwareSchema = {
   applicationCategory: "HealthApplication",
   operatingSystem: "Web",
   url: pageUrl("/products/dentxone"),
+  featureList: [
+    "Patient records and treatment history",
+    "Appointment scheduling with WhatsApp reminders",
+    "Queue-based appointments with token numbers",
+    "Interactive FDI dental chart",
+    "Multi-clinic management",
+    "Dental lab work tracking",
+    "Role-based staff permissions",
+    "Billing and payment tracking",
+  ],
   provider: {
     "@type": "Organization",
     name: "Flizk",
@@ -329,6 +341,35 @@ export default function DentxonePage() {
                 <p className="text-sm text-brand-muted">Detailed insights</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature deep-dives */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-brand-ink mb-4">Explore DentXOne features</h2>
+            <p className="text-xl text-brand-muted">
+              Dig into the parts of DentXOne that matter most to your clinic
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {FEATURE_SLUGS.map((slug) => {
+              const f = FEATURES[slug];
+              const Icon = f.icon;
+              return (
+                <Link
+                  key={slug}
+                  href={PAGE_SEO[f.seoKey].path}
+                  className="block bg-brand-surface rounded-[20px] p-8 hover:shadow-[var(--shadow-soft)] transition-shadow"
+                >
+                  <Icon className="w-8 h-8 text-brand-leaf mb-4" />
+                  <h3 className="text-xl font-semibold text-brand-ink mb-2">{f.name}</h3>
+                  <p className="text-brand-muted leading-relaxed">{f.intro}</p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
