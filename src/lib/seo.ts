@@ -110,6 +110,12 @@ export const PAGE_SEO = {
       "A practical guide for Indian dental clinics: what counts as a no-show, what research says about reminders, and a step-by-step plan using WhatsApp.",
     path: "/guides/reduce-dental-no-shows-india",
   },
+  guideQueueToken: {
+    title: "Dental Clinic Token & Queue System in India (Guide) | Flizk",
+    description:
+      "Walk-in, appointment or token queue? A practical guide for Indian dental clinics on running a fair queue and what the research says about waiting.",
+    path: "/guides/dental-clinic-queue-token-system-india",
+  },
   about: {
     title: "About Flizk – Healthcare Technology Company",
     description:

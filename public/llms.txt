@@ -22,6 +22,7 @@
 ## Guides
 
 - [How to reduce dental no-shows in India](https://flizk.com/guides/reduce-dental-no-shows-india): What counts as a no-show, what research says about reminders, and a step-by-step plan for Indian clinics using WhatsApp and a live queue.
+- [Token and queue systems for dental clinics in India](https://flizk.com/guides/dental-clinic-queue-token-system-india): Walk-in vs appointment vs token queue, how to run a fair queue, and what research says about waiting.
 
 ## Company
 

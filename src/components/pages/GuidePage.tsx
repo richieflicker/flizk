@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CTAButton } from "@/components/CTAButton";
 import { JsonLd } from "@/components/JsonLd";
 import { FEATURES } from "@/content/features";
-import { GUIDES, type GuideSlug } from "@/content/guides";
+import { GUIDES, GUIDE_SLUGS, type GuideContent, type GuideSlug } from "@/content/guides";
 import { CTA_PATHS } from "@/lib/cta";
 import { PAGE_SEO, pageUrl } from "@/lib/seo";
 import { breadcrumbSchema, ORGANIZATION_ID } from "@/lib/schema";
@@ -18,8 +18,12 @@ function formatDate(iso: string) {
 }
 
 export function GuidePage({ slug }: { slug: GuideSlug }) {
-  const g = GUIDES[slug];
+  const g: GuideContent = GUIDES[slug];
   const seo = PAGE_SEO[g.seoKey];
+  const others = GUIDE_SLUGS.filter((x) => x !== slug).map((x) => ({
+    title: GUIDES[x].h1,
+    href: PAGE_SEO[GUIDES[x].seoKey].path,
+  }));
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -108,6 +112,35 @@ export function GuidePage({ slug }: { slug: GuideSlug }) {
                       ))}
                     </ul>
                   ) : null}
+                  {section.table ? (
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-left text-base border-collapse">
+                        <thead>
+                          <tr className="border-b-2 border-brand-surface">
+                            {section.table.headers.map((h) => (
+                              <th key={h} className="py-3 pr-4 font-semibold text-brand-ink">
+                                {h}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row) => (
+                            <tr key={row[0]} className="border-b border-brand-surface align-top">
+                              {row.map((cell, i) => (
+                                <td
+                                  key={i}
+                                  className={`py-3 pr-4 ${i === 0 ? "font-medium text-brand-ink" : ""}`}
+                                >
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : null}
                   {section.steps ? (
                     <ol className="space-y-5">
                       {section.steps.map((step, i) => (
@@ -146,6 +179,21 @@ export function GuidePage({ slug }: { slug: GuideSlug }) {
                 WhatsApp appointment reminders →
               </Link>
             </div>
+
+            {others.length > 0 ? (
+              <div className="border-t border-brand-surface pt-8">
+                <h2 className="text-xl font-semibold text-brand-ink mb-3">More guides</h2>
+                <ul className="space-y-2">
+                  {others.map((o) => (
+                    <li key={o.href}>
+                      <Link href={o.href} className="text-brand-leaf hover:underline">
+                        {o.title} →
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
           </div>
         </section>
 
