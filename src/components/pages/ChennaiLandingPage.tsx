@@ -191,6 +191,18 @@ export default function ChennaiLandingPage() {
             <Link href="/products/dentxone" className="text-brand-leaf hover:underline">
               Full product overview →
             </Link>
+            <Link href="/dental-clinic-software-madurai" className="text-brand-leaf hover:underline">
+              Dental clinic software Madurai →
+            </Link>
+            <Link href="/dental-clinic-software-coimbatore" className="text-brand-leaf hover:underline">
+              Dental clinic software Coimbatore →
+            </Link>
+            <Link href="/dental-clinic-software-virudhunagar" className="text-brand-leaf hover:underline">
+              Dental clinic software Virudhunagar →
+            </Link>
+            <Link href="/dental-clinic-software-kanyakumari" className="text-brand-leaf hover:underline">
+              Dental clinic software Kanyakumari →
+            </Link>
           </div>
         </div>
       </section>
