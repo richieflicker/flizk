@@ -12,7 +12,7 @@ export type ContactIntent = "demo" | "trial" | "enterprise" | "general";
 export const CONTACT_INTENT_MESSAGES: Record<ContactIntent, string> = {
   demo: "I'd like to book a demo of DentXOne for my dental clinic.",
   trial: "I'd like to start a free trial of DentXOne.",
-  enterprise: "I'm interested in the Enterprise plan for a multi-clinic setup.",
+  enterprise: "I'm interested in the Network plan for a multi-clinic setup.",
   general: "",
 };
 

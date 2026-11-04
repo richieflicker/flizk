@@ -118,7 +118,7 @@ export default function ContactPage() {
                       </div>
                       <div className="text-left">
                         <h4 className="font-semibold text-brand-ink">Chat with Sales</h4>
-                        <p className="text-sm text-brand-muted">Enterprise and multi-clinic plans</p>
+                        <p className="text-sm text-brand-muted">Network and multi-clinic plans</p>
                       </div>
                     </div>
                     <span className="text-brand-muted group-hover:text-brand-teal">→</span>
